@@ -156,22 +156,22 @@ def generate_all_signals():
             
             if factor is not None:
                 latest_factor = factor[-1].item()
-                signal_strength = np.tanh(latest_factor)
+                # 因子值通过tanh压缩到[0,1]区间作为强度
+                strength = abs(np.tanh(latest_factor))
                 
-                # 改进信号逻辑：考虑信号强度阈值
-                # 强信号(>0.7): 建议操作
-                # 中等信号(0.3-0.7): 可选操作
-                # 弱信号(<0.3): 观望
-                abs_strength = abs(float(signal_strength))
-                if abs_strength > 0.7:
-                    signal = 'buy' if signal_strength > 0 else 'sell'
-                    action = '强烈建议'
-                elif abs_strength > 0.3:
-                    signal = 'buy' if signal_strength > 0 else 'sell'
-                    action = '可考虑'
-                else:
+                # 信号逻辑：基于强度分级
+                # 强信号(>0.7): 建议买入
+                # 中等信号(0.3-0.7): 观望
+                # 弱信号(<0.3): 回避
+                if strength > 0.7:
+                    signal = 'buy'
+                    action = '建议买入'
+                elif strength > 0.3:
                     signal = 'hold'
                     action = '观望'
+                else:
+                    signal = 'sell'
+                    action = '回避'
                 
                 # 计算日涨跌幅
                 if len(df) >= 2:
@@ -186,7 +186,7 @@ def generate_all_signals():
                     'price': f"{df['close'].iloc[-1]:.4f}",
                     'dayReturn': f"{day_return:+.2f}%",
                     'factor': f"{latest_factor:.4f}",
-                    'strength': abs_strength,
+                    'strength': strength,
                     'signal': signal,
                     'action': action,
                     'date': str(df['trade_date'].iloc[-1])

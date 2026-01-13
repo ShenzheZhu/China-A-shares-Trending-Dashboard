@@ -30,9 +30,9 @@ export default function Home() {
     )
   }
 
-  const getSignalText = (signal, action) => {
-    if (signal === 'buy') return `做多`
-    if (signal === 'sell') return `空仓`
+  const getSignalText = (signal) => {
+    if (signal === 'buy') return '买入'
+    if (signal === 'sell') return '回避'
     return '观望'
   }
 
@@ -276,7 +276,7 @@ export default function Home() {
                 <p className="code">{etf.code}</p>
               </div>
               <span className={`signal-badge ${etf.signal}`}>
-                {getSignalText(etf.signal, etf.action)}
+                {getSignalText(etf.signal)}
               </span>
             </div>
 

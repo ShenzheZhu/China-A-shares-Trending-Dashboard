@@ -87,6 +87,22 @@ def fetch_data(symbol: str, symbol_type: str, days: int = 120):
             '收盘': 'close',
             '成交量': 'vol'
         })
+    elif symbol_type == 'stock':
+        df = ak.stock_zh_a_hist(
+            symbol=symbol,
+            period="daily",
+            start_date=start_date,
+            end_date=end_date,
+            adjust="qfq"
+        )
+        df = df.rename(columns={
+            '日期': 'trade_date',
+            '开盘': 'open',
+            '最高': 'high',
+            '最低': 'low',
+            '收盘': 'close',
+            '成交量': 'vol'
+        })
     else:  # index
         df = ak.stock_zh_index_daily(symbol=symbol)
         df = df.rename(columns={'date': 'trade_date', 'volume': 'vol'})
@@ -191,7 +207,7 @@ def decode_formula(tokens: list) -> str:
 def main():
     parser = argparse.ArgumentParser(description='每日信号计算')
     parser.add_argument('--symbol', type=str, default='511260', help='标的代码')
-    parser.add_argument('--type', type=str, default='etf', choices=['etf', 'index'], help='标的类型')
+    parser.add_argument('--type', type=str, default='etf', choices=['etf', 'index', 'stock'], help='标的类型')
     parser.add_argument('--formula', type=str, default=None, help='公式token（JSON格式），留空则从训练结果读取')
     args = parser.parse_args()
     
