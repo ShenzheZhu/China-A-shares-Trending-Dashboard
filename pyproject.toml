@@ -1,0 +1,17 @@
+[project]
+name = "china-a-shares-dashboard"
+version = "1.0.0"
+description = "AI-driven A-shares ETF trading signal dashboard"
+requires-python = ">=3.10"
+dependencies = [
+    "torch>=2.0",
+    "pandas>=2.0",
+    "numpy>=1.24",
+    "matplotlib>=3.7",
+    "akshare>=1.14",
+    "pyarrow>=14.0",
+    "tqdm>=4.65",
+]
+
+[tool.uv]
+dev-dependencies = []

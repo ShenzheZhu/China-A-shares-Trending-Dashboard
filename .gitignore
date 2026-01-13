@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Data cache
+*.parquet
+*.pkl
+
+# Output
+*.png
+*.log
+training_history.json
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Node
+web/node_modules/
+web/.next/
+
+# uv
+uv.lock
