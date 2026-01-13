@@ -79,10 +79,41 @@ export default function Home() {
       <header className="header">
         <h1>A股ETF信号仪表盘</h1>
         <p className="subtitle">AI-DRIVEN TRADING SIGNALS</p>
-        <p className="update-time">
-          更新: {signals?.updateTime ? new Date(signals.updateTime).toLocaleString('zh-CN') : '-'}
-        </p>
       </header>
+
+      {/* 更新时间状态栏 */}
+      <div className="update-bar">
+        <div className="update-info">
+          <span className="update-label">数据更新时间</span>
+          <span className="update-datetime">
+            {signals?.updateTime ? new Date(signals.updateTime).toLocaleString('zh-CN', {
+              year: 'numeric',
+              month: '2-digit', 
+              day: '2-digit',
+              hour: '2-digit',
+              minute: '2-digit',
+              second: '2-digit'
+            }) : '-'}
+          </span>
+        </div>
+        <div className="update-status">
+          {(() => {
+            if (!signals?.updateTime) return <span className="status-unknown">未知</span>
+            const updateDate = new Date(signals.updateTime)
+            const now = new Date()
+            const diffHours = (now - updateDate) / (1000 * 60 * 60)
+            const isToday = updateDate.toDateString() === now.toDateString()
+            
+            if (isToday && diffHours < 12) {
+              return <span className="status-fresh">今日已更新</span>
+            } else if (diffHours < 24) {
+              return <span className="status-recent">24小时内</span>
+            } else {
+              return <span className="status-stale">数据较旧 ({Math.floor(diffHours / 24)}天前)</span>
+            }
+          })()}
+        </div>
+      </div>
 
       {/* 市场概览 */}
       <div className="overview">

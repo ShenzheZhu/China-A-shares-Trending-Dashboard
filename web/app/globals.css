@@ -37,10 +37,72 @@ body {
   letter-spacing: 0.15em;
 }
 
-.update-time {
+/* 更新时间状态栏 */
+.update-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(145deg, #18181b 0%, #0f0f12 100%);
+  border: 1px solid #27272a;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.update-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.update-label {
+  font-size: 0.65rem;
   color: #52525b;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.update-datetime {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #fafafa;
+  font-variant-numeric: tabular-nums;
+}
+
+.update-status {
+  display: flex;
+  align-items: center;
+}
+
+.update-status span {
+  padding: 0.375rem 0.75rem;
+  border-radius: 20px;
   font-size: 0.75rem;
-  margin-top: 0.5rem;
+  font-weight: 500;
+}
+
+.status-fresh {
+  background: rgba(74, 222, 128, 0.15);
+  color: #4ade80;
+  border: 1px solid rgba(74, 222, 128, 0.3);
+}
+
+.status-recent {
+  background: rgba(250, 204, 21, 0.15);
+  color: #facc15;
+  border: 1px solid rgba(250, 204, 21, 0.3);
+}
+
+.status-stale {
+  background: rgba(248, 113, 113, 0.15);
+  color: #f87171;
+  border: 1px solid rgba(248, 113, 113, 0.3);
+}
+
+.status-unknown {
+  background: rgba(161, 161, 170, 0.15);
+  color: #a1a1aa;
+  border: 1px solid rgba(161, 161, 170, 0.3);
 }
 
 /* 市场概览 */
