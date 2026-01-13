@@ -6,6 +6,7 @@ export default function Home() {
   const [signals, setSignals] = useState(null)
   const [loading, setLoading] = useState(true)
   const [filter, setFilter] = useState('all')
+  const [search, setSearch] = useState('')
   const [showRules, setShowRules] = useState(false)
 
   useEffect(() => {
@@ -36,9 +37,12 @@ export default function Home() {
   }
 
   const categories = ['all', ...new Set(signals?.etfs?.map(e => e.category) || [])]
-  const filteredETFs = filter === 'all' 
-    ? signals?.etfs 
-    : signals?.etfs?.filter(e => e.category === filter)
+  const filteredETFs = (signals?.etfs || [])
+    .filter(e => filter === 'all' || e.category === filter)
+    .filter(e => !search || 
+      e.name.toLowerCase().includes(search.toLowerCase()) || 
+      e.code.includes(search)
+    )
 
   // 统计
   const buyCount = signals?.etfs?.filter(e => e.signal === 'buy').length || 0
@@ -235,7 +239,19 @@ export default function Home() {
 
       {/* 筛选器 */}
       <div className="filter-section">
-        <h3>📋 ETF详情</h3>
+        <h3>📋 ETF详情 <span className="etf-count">共 {filteredETFs.length} 个</span></h3>
+        <div className="search-bar">
+          <input 
+            type="text"
+            placeholder="搜索ETF名称或代码..."
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            className="search-input"
+          />
+          {search && (
+            <button className="clear-btn" onClick={() => setSearch('')}>×</button>
+          )}
+        </div>
         <div className="filter-bar">
           {categories.map(cat => (
             <button
