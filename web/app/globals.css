@@ -5,182 +5,45 @@
 }
 
 body {
-  font-family: 'SF Mono', 'Fira Code', 'JetBrains Mono', monospace;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   background: #0a0a0f;
   color: #e4e4e7;
   min-height: 100vh;
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 2rem;
 }
 
 .header {
   text-align: center;
-  margin-bottom: 3rem;
-  padding: 2rem 0;
+  margin-bottom: 2rem;
+  padding: 1.5rem 0;
   border-bottom: 1px solid #27272a;
 }
 
 .header h1 {
-  font-size: 2.5rem;
-  font-weight: 300;
-  letter-spacing: 0.2em;
+  font-size: 2rem;
+  font-weight: 600;
   color: #fafafa;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.25rem;
 }
 
 .header .subtitle {
   color: #71717a;
-  font-size: 0.875rem;
-  letter-spacing: 0.1em;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
 }
 
 .update-time {
   color: #52525b;
   font-size: 0.75rem;
-  margin-top: 1rem;
+  margin-top: 0.5rem;
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 1.5rem;
-}
-
-.card {
-  background: linear-gradient(145deg, #18181b 0%, #0f0f12 100%);
-  border: 1px solid #27272a;
-  border-radius: 12px;
-  padding: 1.5rem;
-  transition: all 0.3s ease;
-}
-
-.card:hover {
-  border-color: #3f3f46;
-  transform: translateY(-2px);
-}
-
-.card-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: 1.5rem;
-}
-
-.etf-info h2 {
-  font-size: 1.25rem;
-  font-weight: 500;
-  color: #fafafa;
-}
-
-.etf-info .code {
-  font-size: 0.75rem;
-  color: #52525b;
-  margin-top: 0.25rem;
-}
-
-.signal-badge {
-  padding: 0.375rem 0.75rem;
-  border-radius: 6px;
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.05em;
-}
-
-.signal-badge.buy {
-  background: rgba(34, 197, 94, 0.15);
-  color: #4ade80;
-  border: 1px solid rgba(34, 197, 94, 0.3);
-}
-
-.signal-badge.sell {
-  background: rgba(239, 68, 68, 0.15);
-  color: #f87171;
-  border: 1px solid rgba(239, 68, 68, 0.3);
-}
-
-.signal-badge.hold {
-  background: rgba(161, 161, 170, 0.15);
-  color: #a1a1aa;
-  border: 1px solid rgba(161, 161, 170, 0.3);
-}
-
-.metrics {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
-}
-
-.metric {
-  padding: 0.75rem;
-  background: #09090b;
-  border-radius: 8px;
-}
-
-.metric-label {
-  font-size: 0.625rem;
-  color: #52525b;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  margin-bottom: 0.25rem;
-}
-
-.metric-value {
-  font-size: 1.125rem;
-  font-weight: 500;
-  color: #fafafa;
-}
-
-.metric-value.positive {
-  color: #4ade80;
-}
-
-.metric-value.negative {
-  color: #f87171;
-}
-
-.strength-bar {
-  margin-top: 1rem;
-  padding-top: 1rem;
-  border-top: 1px solid #27272a;
-}
-
-.strength-label {
-  font-size: 0.625rem;
-  color: #52525b;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  margin-bottom: 0.5rem;
-}
-
-.bar-container {
-  height: 4px;
-  background: #27272a;
-  border-radius: 2px;
-  overflow: hidden;
-}
-
-.bar-fill {
-  height: 100%;
-  border-radius: 2px;
-  transition: width 0.5s ease;
-}
-
-.bar-fill.buy {
-  background: linear-gradient(90deg, #22c55e, #4ade80);
-}
-
-.bar-fill.sell {
-  background: linear-gradient(90deg, #ef4444, #f87171);
-}
-
-.bar-fill.hold {
-  background: linear-gradient(90deg, #71717a, #a1a1aa);
-}
-
+/* 市场概览 */
 .overview {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -191,42 +54,232 @@ body {
 .stat-card {
   background: linear-gradient(145deg, #18181b 0%, #0f0f12 100%);
   border: 1px solid #27272a;
-  border-radius: 12px;
-  padding: 1.25rem;
+  border-left: 3px solid #3f3f46;
+  border-radius: 8px;
+  padding: 1rem;
   text-align: center;
 }
 
-.stat-card.buy { border-left: 3px solid #4ade80; }
-.stat-card.sell { border-left: 3px solid #f87171; }
-.stat-card.hold { border-left: 3px solid #a1a1aa; }
-.stat-card.neutral { border-left: 3px solid #60a5fa; }
+.stat-card.buy { border-left-color: #4ade80; }
+.stat-card.sell { border-left-color: #f87171; }
+.stat-card.hold { border-left-color: #a1a1aa; }
+.stat-card.neutral { border-left-color: #60a5fa; }
 
 .stat-num {
   display: block;
-  font-size: 2rem;
+  font-size: 1.75rem;
   font-weight: 600;
   color: #fafafa;
 }
 
 .stat-label {
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   color: #71717a;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+}
+
+/* 板块分析 */
+.analysis-section {
+  margin-bottom: 2rem;
+}
+
+.analysis-section h3,
+.recommendation-section h3,
+.filter-section h3,
+.rules-section h3 {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #fafafa;
+  margin-bottom: 1rem;
+}
+
+.sector-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+.sector-card {
+  background: linear-gradient(145deg, #18181b 0%, #0f0f12 100%);
+  border: 1px solid #27272a;
+  border-radius: 10px;
+  padding: 1rem;
+  transition: all 0.2s;
+}
+
+.sector-card:hover {
+  border-color: #3f3f46;
+}
+
+.sector-card.buy { border-top: 2px solid #4ade80; }
+.sector-card.hold { border-top: 2px solid #facc15; }
+.sector-card.sell { border-top: 2px solid #f87171; }
+
+.sector-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.sector-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fafafa;
+}
+
+.sector-signal {
+  font-size: 0.7rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+}
+
+.sector-signal.buy { background: rgba(74, 222, 128, 0.15); color: #4ade80; }
+.sector-signal.hold { background: rgba(250, 204, 21, 0.15); color: #facc15; }
+.sector-signal.sell { background: rgba(248, 113, 113, 0.15); color: #f87171; }
+
+.sector-stats {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.sector-stat {
+  display: flex;
+  flex-direction: column;
+}
+
+.sector-stat .stat-value {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #fafafa;
+}
+
+.sector-stat .stat-value.positive { color: #4ade80; }
+.sector-stat .stat-value.negative { color: #f87171; }
+
+.sector-stat .stat-desc {
+  font-size: 0.65rem;
+  color: #71717a;
+}
+
+.sector-bar {
+  height: 4px;
+  background: #27272a;
+  border-radius: 2px;
+  margin-bottom: 0.75rem;
+  overflow: hidden;
+}
+
+.sector-bar-fill {
+  height: 100%;
+  border-radius: 2px;
+  transition: width 0.5s;
+}
+
+.sector-bar-fill.buy { background: linear-gradient(90deg, #22c55e, #4ade80); }
+.sector-bar-fill.hold { background: linear-gradient(90deg, #eab308, #facc15); }
+.sector-bar-fill.sell { background: linear-gradient(90deg, #dc2626, #f87171); }
+
+.sector-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.375rem;
+}
+
+.sector-item {
+  font-size: 0.65rem;
+  color: #71717a;
+  background: #27272a;
+  padding: 0.125rem 0.375rem;
+  border-radius: 3px;
+}
+
+/* 今日建议 */
+.recommendation-section {
+  margin-bottom: 2rem;
+}
+
+.recommendation-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.rec-card {
+  background: linear-gradient(145deg, #18181b 0%, #0f0f12 100%);
+  border: 1px solid #27272a;
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+.rec-card h4 {
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #27272a;
+}
+
+.rec-card.buy h4 { color: #4ade80; }
+.rec-card.hold h4 { color: #facc15; }
+.rec-card.avoid h4 { color: #f87171; }
+
+.rec-card ul {
+  list-style: none;
+}
+
+.rec-card li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.375rem 0;
+  font-size: 0.8rem;
+  border-bottom: 1px solid #1f1f23;
+}
+
+.rec-card li:last-child {
+  border-bottom: none;
+}
+
+.rec-card li.empty {
+  color: #52525b;
+  justify-content: center;
+}
+
+.rec-name {
+  color: #fafafa;
+  flex: 1;
+}
+
+.rec-code {
+  color: #52525b;
+  font-size: 0.7rem;
+  margin: 0 0.5rem;
+}
+
+.rec-strength {
+  color: #a1a1aa;
+  font-size: 0.75rem;
+  min-width: 35px;
+  text-align: right;
+}
+
+/* 筛选器 */
+.filter-section {
+  margin-bottom: 1rem;
 }
 
 .filter-bar {
   display: flex;
   gap: 0.5rem;
-  margin-bottom: 1.5rem;
   flex-wrap: wrap;
 }
 
 .filter-btn {
-  padding: 0.5rem 1rem;
+  padding: 0.4rem 0.8rem;
   background: #18181b;
   border: 1px solid #27272a;
-  border-radius: 6px;
+  border-radius: 5px;
   color: #a1a1aa;
   font-size: 0.75rem;
   cursor: pointer;
@@ -244,113 +297,266 @@ body {
   color: #fafafa;
 }
 
-.category-tag {
-  display: inline-block;
-  font-size: 0.625rem;
-  color: #71717a;
-  background: #27272a;
-  padding: 0.125rem 0.5rem;
-  border-radius: 4px;
-  margin-bottom: 0.5rem;
+/* ETF卡片 */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
 }
 
-.guide-section {
-  margin-top: 3rem;
-  padding: 1.5rem;
+.card {
   background: linear-gradient(145deg, #18181b 0%, #0f0f12 100%);
   border: 1px solid #27272a;
-  border-radius: 12px;
+  border-radius: 10px;
+  padding: 1rem;
+  transition: all 0.2s;
 }
 
-.guide-section h3 {
-  font-size: 0.75rem;
-  color: #52525b;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
+.card:hover {
+  border-color: #3f3f46;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
   margin-bottom: 1rem;
 }
 
-.guide-content {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1rem;
-}
-
-.guide-item {
-  display: flex;
-  gap: 0.75rem;
-  align-items: flex-start;
-}
-
-.guide-icon {
-  font-size: 1.25rem;
-}
-
-.guide-item strong {
-  display: block;
-  font-size: 0.875rem;
+.etf-info h2 {
+  font-size: 1rem;
+  font-weight: 500;
   color: #fafafa;
+}
+
+.etf-info .code {
+  font-size: 0.7rem;
+  color: #52525b;
+  margin-top: 0.125rem;
+}
+
+.category-tag {
+  display: inline-block;
+  font-size: 0.6rem;
+  color: #71717a;
+  background: #27272a;
+  padding: 0.1rem 0.4rem;
+  border-radius: 3px;
   margin-bottom: 0.25rem;
 }
 
-.guide-item p {
-  font-size: 0.75rem;
-  color: #71717a;
-  margin: 0;
+.signal-badge {
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  font-weight: 500;
 }
 
-.formula-section {
-  margin-top: 1.5rem;
-  padding: 1.5rem;
-  background: linear-gradient(145deg, #18181b 0%, #0f0f12 100%);
-  border: 1px solid #27272a;
-  border-radius: 12px;
+.signal-badge.buy {
+  background: rgba(74, 222, 128, 0.15);
+  color: #4ade80;
 }
 
-.formula-section h3 {
-  font-size: 0.75rem;
-  color: #52525b;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  margin-bottom: 1rem;
+.signal-badge.sell {
+  background: rgba(248, 113, 113, 0.15);
+  color: #f87171;
 }
 
-.formula-code {
-  display: block;
-  font-family: 'SF Mono', 'Fira Code', monospace;
-  font-size: 0.875rem;
-  color: #a78bfa;
+.signal-badge.hold {
+  background: rgba(161, 161, 170, 0.15);
+  color: #a1a1aa;
+}
+
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+}
+
+.metric {
+  padding: 0.5rem;
   background: #09090b;
-  padding: 1rem;
-  border-radius: 8px;
-  overflow-x: auto;
+  border-radius: 6px;
 }
 
-.formula-desc {
-  font-size: 0.75rem;
-  color: #71717a;
+.metric-label {
+  font-size: 0.6rem;
+  color: #52525b;
+  margin-bottom: 0.125rem;
+}
+
+.metric-value {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #fafafa;
+}
+
+.metric-value.positive { color: #4ade80; }
+.metric-value.negative { color: #f87171; }
+
+.strength-bar {
   margin-top: 0.75rem;
 }
 
+.bar-container {
+  height: 3px;
+  background: #27272a;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.bar-fill {
+  height: 100%;
+  border-radius: 2px;
+  transition: width 0.5s;
+}
+
+.bar-fill.buy { background: linear-gradient(90deg, #22c55e, #4ade80); }
+.bar-fill.sell { background: linear-gradient(90deg, #dc2626, #f87171); }
+.bar-fill.hold { background: linear-gradient(90deg, #71717a, #a1a1aa); }
+
+/* 策略规则 */
+.rules-section {
+  background: linear-gradient(145deg, #18181b 0%, #0f0f12 100%);
+  border: 1px solid #27272a;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+  overflow: hidden;
+}
+
+.rules-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.rules-header:hover {
+  background: rgba(255,255,255,0.02);
+}
+
+.rules-header h3 {
+  margin: 0;
+}
+
+.toggle {
+  font-size: 0.75rem;
+  color: #71717a;
+}
+
+.rules-content {
+  padding: 0 1rem 1rem;
+  border-top: 1px solid #27272a;
+}
+
+.rule-block {
+  padding: 1rem 0;
+  border-bottom: 1px solid #1f1f23;
+}
+
+.rule-block:last-child {
+  border-bottom: none;
+}
+
+.rule-block h4 {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #fafafa;
+  margin-bottom: 0.5rem;
+}
+
+.rule-block code {
+  display: block;
+  font-family: 'SF Mono', 'Fira Code', monospace;
+  font-size: 0.9rem;
+  color: #a78bfa;
+  background: #09090b;
+  padding: 0.75rem;
+  border-radius: 6px;
+  margin-bottom: 0.5rem;
+}
+
+.rule-block p {
+  font-size: 0.8rem;
+  color: #a1a1aa;
+  line-height: 1.5;
+  margin-bottom: 0.5rem;
+}
+
+.rule-block ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.rule-block li {
+  font-size: 0.8rem;
+  color: #a1a1aa;
+  padding: 0.25rem 0;
+  padding-left: 1rem;
+  position: relative;
+}
+
+.rule-block li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: #52525b;
+}
+
+.rule-block table {
+  width: 100%;
+  font-size: 0.8rem;
+  border-collapse: collapse;
+}
+
+.rule-block td {
+  padding: 0.375rem 0.5rem;
+  border-bottom: 1px solid #1f1f23;
+  color: #a1a1aa;
+}
+
+.rule-block td:first-child {
+  color: #fafafa;
+  font-weight: 500;
+  width: 120px;
+}
+
+.level-strong { color: #4ade80 !important; }
+.level-medium { color: #facc15 !important; }
+.level-weak { color: #f87171 !important; }
+
+/* Footer */
 .footer {
   text-align: center;
-  margin-top: 3rem;
-  padding-top: 2rem;
+  padding-top: 1.5rem;
   border-top: 1px solid #27272a;
   color: #52525b;
-  font-size: 0.75rem;
+  font-size: 0.7rem;
 }
 
 .disclaimer {
-  max-width: 600px;
+  max-width: 500px;
   margin: 0 auto;
-  line-height: 1.6;
+  line-height: 1.5;
 }
 
+/* 响应式 */
 @media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+  
   .overview {
     grid-template-columns: repeat(2, 1fr);
   }
+  
+  .recommendation-grid {
+    grid-template-columns: 1fr;
+  }
+  
   .grid {
     grid-template-columns: 1fr;
   }

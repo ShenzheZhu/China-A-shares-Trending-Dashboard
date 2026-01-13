@@ -6,6 +6,7 @@ export default function Home() {
   const [signals, setSignals] = useState(null)
   const [loading, setLoading] = useState(true)
   const [filter, setFilter] = useState('all')
+  const [showRules, setShowRules] = useState(false)
 
   useEffect(() => {
     fetch('/data/signals.json')
@@ -29,8 +30,8 @@ export default function Home() {
   }
 
   const getSignalText = (signal, action) => {
-    if (signal === 'buy') return `做多 (${action})`
-    if (signal === 'sell') return `空仓 (${action})`
+    if (signal === 'buy') return `做多`
+    if (signal === 'sell') return `空仓`
     return '观望'
   }
 
@@ -41,22 +42,54 @@ export default function Home() {
 
   // 统计
   const buyCount = signals?.etfs?.filter(e => e.signal === 'buy').length || 0
-  const sellCount = signals?.etfs?.filter(e => e.signal === 'sell').length || 0
   const holdCount = signals?.etfs?.filter(e => e.signal === 'hold').length || 0
   const total = signals?.etfs?.length || 0
+
+  // 板块分析
+  const getSectorAnalysis = () => {
+    if (!signals?.etfs) return []
+    const sectors = {}
+    signals.etfs.forEach(e => {
+      if (!sectors[e.category]) {
+        sectors[e.category] = { items: [], totalStrength: 0, totalReturn: 0 }
+      }
+      sectors[e.category].items.push(e)
+      sectors[e.category].totalStrength += e.strength
+      sectors[e.category].totalReturn += parseFloat(e.dayReturn)
+    })
+    
+    return Object.entries(sectors).map(([name, data]) => ({
+      name,
+      avgStrength: data.totalStrength / data.items.length,
+      avgReturn: data.totalReturn / data.items.length,
+      count: data.items.length,
+      items: data.items
+    })).sort((a, b) => b.avgStrength - a.avgStrength)
+  }
+
+  const sectorAnalysis = getSectorAnalysis()
+
+  // 市场情绪判断
+  const avgStrength = signals?.etfs?.reduce((a, b) => a + b.strength, 0) / total || 0
+  const marketMood = avgStrength > 0.7 ? '偏多' : avgStrength > 0.4 ? '震荡' : '偏空'
+  const moodColor = avgStrength > 0.7 ? '#4ade80' : avgStrength > 0.4 ? '#facc15' : '#f87171'
 
   return (
     <div className="container">
       <header className="header">
-        <h1>ALPHAGPT</h1>
-        <p className="subtitle">AI-DRIVEN ETF TRADING SIGNALS</p>
+        <h1>A股ETF信号仪表盘</h1>
+        <p className="subtitle">AI-DRIVEN TRADING SIGNALS</p>
         <p className="update-time">
-          更新时间: {signals?.updateTime ? new Date(signals.updateTime).toLocaleString('zh-CN') : '-'}
+          更新: {signals?.updateTime ? new Date(signals.updateTime).toLocaleString('zh-CN') : '-'}
         </p>
       </header>
 
       {/* 市场概览 */}
       <div className="overview">
+        <div className="stat-card" style={{borderLeftColor: moodColor}}>
+          <span className="stat-num">{(avgStrength * 100).toFixed(0)}%</span>
+          <span className="stat-label">市场情绪 · {marketMood}</span>
+        </div>
         <div className="stat-card buy">
           <span className="stat-num">{buyCount}</span>
           <span className="stat-label">做多信号</span>
@@ -65,27 +98,124 @@ export default function Home() {
           <span className="stat-num">{holdCount}</span>
           <span className="stat-label">观望</span>
         </div>
-        <div className="stat-card sell">
-          <span className="stat-num">{sellCount}</span>
-          <span className="stat-label">空仓信号</span>
-        </div>
         <div className="stat-card neutral">
           <span className="stat-num">{total}</span>
           <span className="stat-label">监控ETF</span>
         </div>
       </div>
 
+      {/* 板块分析 */}
+      <div className="analysis-section">
+        <h3>📊 板块分析</h3>
+        <div className="sector-grid">
+          {sectorAnalysis.map(sector => {
+            const signal = sector.avgStrength > 0.7 ? 'buy' : sector.avgStrength > 0.3 ? 'hold' : 'sell'
+            const recommendation = sector.avgStrength > 0.7 
+              ? '建议买入' 
+              : sector.avgStrength > 0.3 
+                ? '建议观望' 
+                : '建议回避'
+            
+            return (
+              <div className={`sector-card ${signal}`} key={sector.name}>
+                <div className="sector-header">
+                  <span className="sector-name">{sector.name}</span>
+                  <span className={`sector-signal ${signal}`}>{recommendation}</span>
+                </div>
+                <div className="sector-stats">
+                  <div className="sector-stat">
+                    <span className="stat-value">{(sector.avgStrength * 100).toFixed(0)}%</span>
+                    <span className="stat-desc">信号强度</span>
+                  </div>
+                  <div className="sector-stat">
+                    <span className={`stat-value ${sector.avgReturn >= 0 ? 'positive' : 'negative'}`}>
+                      {sector.avgReturn >= 0 ? '+' : ''}{sector.avgReturn.toFixed(2)}%
+                    </span>
+                    <span className="stat-desc">今日涨跌</span>
+                  </div>
+                </div>
+                <div className="sector-bar">
+                  <div 
+                    className={`sector-bar-fill ${signal}`} 
+                    style={{width: `${sector.avgStrength * 100}%`}}
+                  />
+                </div>
+                <div className="sector-items">
+                  {sector.items.map(e => (
+                    <span key={e.code} className="sector-item">
+                      {e.name.replace('ETF', '')}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            )
+          })}
+        </div>
+      </div>
+
+      {/* 今日建议 */}
+      <div className="recommendation-section">
+        <h3>💡 今日操作建议</h3>
+        <div className="recommendation-grid">
+          <div className="rec-card buy">
+            <h4>可考虑买入</h4>
+            <ul>
+              {signals?.etfs?.filter(e => e.strength > 0.7).slice(0, 5).map(e => (
+                <li key={e.code}>
+                  <span className="rec-name">{e.name}</span>
+                  <span className="rec-code">{e.code}</span>
+                  <span className="rec-strength">{(e.strength * 100).toFixed(0)}%</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="rec-card hold">
+            <h4>建议观望</h4>
+            <ul>
+              {signals?.etfs?.filter(e => e.strength <= 0.7 && e.strength > 0.3).map(e => (
+                <li key={e.code}>
+                  <span className="rec-name">{e.name}</span>
+                  <span className="rec-code">{e.code}</span>
+                  <span className="rec-strength">{(e.strength * 100).toFixed(0)}%</span>
+                </li>
+              ))}
+              {signals?.etfs?.filter(e => e.strength <= 0.7 && e.strength > 0.3).length === 0 && 
+                <li className="empty">无</li>
+              }
+            </ul>
+          </div>
+          <div className="rec-card avoid">
+            <h4>建议回避</h4>
+            <ul>
+              {signals?.etfs?.filter(e => e.strength <= 0.3).map(e => (
+                <li key={e.code}>
+                  <span className="rec-name">{e.name}</span>
+                  <span className="rec-code">{e.code}</span>
+                  <span className="rec-strength">{(e.strength * 100).toFixed(0)}%</span>
+                </li>
+              ))}
+              {signals?.etfs?.filter(e => e.strength <= 0.3).length === 0 && 
+                <li className="empty">无</li>
+              }
+            </ul>
+          </div>
+        </div>
+      </div>
+
       {/* 筛选器 */}
-      <div className="filter-bar">
-        {categories.map(cat => (
-          <button
-            key={cat}
-            className={`filter-btn ${filter === cat ? 'active' : ''}`}
-            onClick={() => setFilter(cat)}
-          >
-            {cat === 'all' ? '全部' : cat}
-          </button>
-        ))}
+      <div className="filter-section">
+        <h3>📋 ETF详情</h3>
+        <div className="filter-bar">
+          {categories.map(cat => (
+            <button
+              key={cat}
+              className={`filter-btn ${filter === cat ? 'active' : ''}`}
+              onClick={() => setFilter(cat)}
+            >
+              {cat === 'all' ? '全部' : cat}
+            </button>
+          ))}
+        </div>
       </div>
 
       {/* ETF卡片 */}
@@ -138,45 +268,74 @@ export default function Home() {
         ))}
       </div>
 
-      {/* 使用指南 */}
-      <div className="guide-section">
-        <h3>使用指南</h3>
-        <div className="guide-content">
-          <div className="guide-item">
-            <span className="guide-icon">🟢</span>
-            <div>
-              <strong>做多信号 (强度 &gt; 70%)</strong>
-              <p>可考虑买入或持有</p>
-            </div>
-          </div>
-          <div className="guide-item">
-            <span className="guide-icon">⚪</span>
-            <div>
-              <strong>观望信号 (强度 &lt; 30%)</strong>
-              <p>建议空仓等待</p>
-            </div>
-          </div>
-          <div className="guide-item">
-            <span className="guide-icon">🔴</span>
-            <div>
-              <strong>空仓信号</strong>
-              <p>建议卖出或回避</p>
-            </div>
-          </div>
-          <div className="guide-item">
-            <span className="guide-icon">⏰</span>
-            <div>
-              <strong>操作时间</strong>
-              <p>建议在14:30-14:55之间决策</p>
-            </div>
-          </div>
+      {/* 策略规则 */}
+      <div className="rules-section">
+        <div className="rules-header" onClick={() => setShowRules(!showRules)}>
+          <h3>📖 策略原理与规则</h3>
+          <span className="toggle">{showRules ? '收起' : '展开'}</span>
         </div>
-      </div>
+        
+        {showRules && (
+          <div className="rules-content">
+            <div className="rule-block">
+              <h4>1. 核心公式</h4>
+              <code>ABS(SUB(ABS(VOL_CHG), V_RET))</code>
+              <p>即：|( |成交量变化率| - 量价因子 )|</p>
+            </div>
 
-      <div className="formula-section">
-        <h3>策略公式</h3>
-        <code className="formula-code">{signals?.formula || 'ABS(SUB(ABS(VOL_CHG),V_RET))'}</code>
-        <p className="formula-desc">量价背离因子：当成交量变化与价格变化不同步时产生信号</p>
+            <div className="rule-block">
+              <h4>2. 因子含义</h4>
+              <table>
+                <tbody>
+                  <tr><td>VOL_CHG</td><td>成交量变化率 = 当日成交量 / 20日均量 - 1</td></tr>
+                  <tr><td>V_RET</td><td>量价因子 = 日收益率 × (成交量变化+1)</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div className="rule-block">
+              <h4>3. 信号逻辑</h4>
+              <p><strong>量价背离原理：</strong></p>
+              <ul>
+                <li>放量不涨：成交量放大但价格没跟上 → 因子值大 → 可能有资金吸筹</li>
+                <li>缩量不跌：成交量萎缩但价格稳定 → 因子值大 → 抛压已释放</li>
+                <li>量价同步：正常走势 → 因子值小 → 无明显机会</li>
+              </ul>
+            </div>
+
+            <div className="rule-block">
+              <h4>4. 信号强度分级</h4>
+              <table>
+                <tbody>
+                  <tr><td className="level-strong">强度 &gt; 70%</td><td>强信号，可考虑建仓</td></tr>
+                  <tr><td className="level-medium">强度 30-70%</td><td>中等信号，观察为主</td></tr>
+                  <tr><td className="level-weak">强度 &lt; 30%</td><td>弱信号，建议空仓</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div className="rule-block">
+              <h4>5. 操作建议</h4>
+              <ul>
+                <li><strong>时间：</strong>每日14:00-14:55查看信号并决策</li>
+                <li><strong>仓位：</strong>单只ETF不超过总资金20%</li>
+                <li><strong>止损：</strong>设置5%止损线</li>
+                <li><strong>择时：</strong>下跌日买入优于追涨（信号强+价格跌=抄底机会）</li>
+                <li><strong>板块轮动：</strong>优先选择强度最高的板块</li>
+              </ul>
+            </div>
+
+            <div className="rule-block">
+              <h4>6. 注意事项</h4>
+              <ul>
+                <li>本策略基于量价关系，适合趋势行情</li>
+                <li>极端行情（涨跌停、大幅跳空）时谨慎使用</li>
+                <li>信号仅供参考，需结合基本面判断</li>
+                <li>回测年化7.84%，Sharpe 2.12（2023-2024样本外）</li>
+              </ul>
+            </div>
+          </div>
+        )}
       </div>
 
       <footer className="footer">
