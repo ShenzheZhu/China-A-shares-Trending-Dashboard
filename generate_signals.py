@@ -45,7 +45,6 @@ import numpy as np
 def generate_all_signals():
     results = {
         'updateTime': datetime.now().isoformat(),
-        'formula': decode_formula(DEFAULT_FORMULA),
         'etfs': []
     }
     

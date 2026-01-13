@@ -1,6 +1,5 @@
 {
-  "updateTime": "2026-01-13T16:14:26.688228",
-  "formula": "ABS(SUB(ABS(VOL_CHG),V_RET))",
+  "updateTime": "2026-01-13T16:37:34.291317",
   "etfs": [
     {
       "code": "510300",

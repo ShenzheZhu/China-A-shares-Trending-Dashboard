@@ -299,43 +299,28 @@ export default function Home() {
         ))}
       </div>
 
-      {/* 策略规则 */}
+      {/* 使用说明 */}
       <div className="rules-section">
         <div className="rules-header" onClick={() => setShowRules(!showRules)}>
-          <h3>📖 策略原理与规则</h3>
+          <h3>📖 使用说明</h3>
           <span className="toggle">{showRules ? '收起' : '展开'}</span>
         </div>
         
         {showRules && (
           <div className="rules-content">
             <div className="rule-block">
-              <h4>1. 核心公式</h4>
-              <code>ABS(SUB(ABS(VOL_CHG), V_RET))</code>
-              <p>即：|( |成交量变化率| - 量价因子 )|</p>
-            </div>
-
-            <div className="rule-block">
-              <h4>2. 因子含义</h4>
+              <h4>市场情绪解读</h4>
               <table>
                 <tbody>
-                  <tr><td>VOL_CHG</td><td>成交量变化率 = 当日成交量 / 20日均量 - 1</td></tr>
-                  <tr><td>V_RET</td><td>量价因子 = 日收益率 × (成交量变化+1)</td></tr>
+                  <tr><td className="level-strong">情绪 &gt; 70%</td><td>市场整体偏多，可积极参与</td></tr>
+                  <tr><td className="level-medium">情绪 40-70%</td><td>市场震荡，谨慎操作</td></tr>
+                  <tr><td className="level-weak">情绪 &lt; 40%</td><td>市场偏空，建议观望</td></tr>
                 </tbody>
               </table>
             </div>
 
             <div className="rule-block">
-              <h4>3. 信号逻辑</h4>
-              <p><strong>量价背离原理：</strong></p>
-              <ul>
-                <li>放量不涨：成交量放大但价格没跟上 → 因子值大 → 可能有资金吸筹</li>
-                <li>缩量不跌：成交量萎缩但价格稳定 → 因子值大 → 抛压已释放</li>
-                <li>量价同步：正常走势 → 因子值小 → 无明显机会</li>
-              </ul>
-            </div>
-
-            <div className="rule-block">
-              <h4>4. 信号强度分级</h4>
+              <h4>信号强度说明</h4>
               <table>
                 <tbody>
                   <tr><td className="level-strong">强度 &gt; 70%</td><td>强信号，可考虑建仓</td></tr>
@@ -346,23 +331,22 @@ export default function Home() {
             </div>
 
             <div className="rule-block">
-              <h4>5. 操作建议</h4>
+              <h4>操作建议</h4>
               <ul>
                 <li><strong>时间：</strong>每日14:00-14:55查看信号并决策</li>
                 <li><strong>仓位：</strong>单只ETF不超过总资金20%</li>
                 <li><strong>止损：</strong>设置5%止损线</li>
-                <li><strong>择时：</strong>下跌日买入优于追涨（信号强+价格跌=抄底机会）</li>
-                <li><strong>板块轮动：</strong>优先选择强度最高的板块</li>
+                <li><strong>择时：</strong>信号强+价格下跌时可能是较好买点</li>
+                <li><strong>板块轮动：</strong>优先关注强度最高的板块</li>
               </ul>
             </div>
 
             <div className="rule-block">
-              <h4>6. 注意事项</h4>
+              <h4>注意事项</h4>
               <ul>
-                <li>本策略基于量价关系，适合趋势行情</li>
-                <li>极端行情（涨跌停、大幅跳空）时谨慎使用</li>
-                <li>信号仅供参考，需结合基本面判断</li>
-                <li>回测年化7.84%，Sharpe 2.12（2023-2024样本外）</li>
+                <li>信号基于AI量化模型生成</li>
+                <li>极端行情时谨慎使用</li>
+                <li>信号仅供参考，需结合自身判断</li>
               </ul>
             </div>
           </div>
