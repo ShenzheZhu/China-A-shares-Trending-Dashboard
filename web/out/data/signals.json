@@ -1,5 +1,5 @@
 {
-  "updateTime": "2026-01-13T16:50:50.883923",
+  "updateTime": "2026-01-13T16:56:22.102740",
   "etfs": [
     {
       "code": "510300",
@@ -446,18 +446,6 @@
       "date": "2026-01-13"
     },
     {
-      "code": "516110",
-      "name": "汽车ETF",
-      "category": "消费",
-      "price": "1.4330",
-      "dayReturn": "-1.24%",
-      "factor": "2.8321",
-      "strength": 0.9930876733807401,
-      "signal": "buy",
-      "action": "建议买入",
-      "date": "2026-01-13"
-    },
-    {
       "code": "159936",
       "name": "黄金消费ETF",
       "category": "消费",
@@ -494,13 +482,13 @@
       "date": "2026-01-13"
     },
     {
-      "code": "515170",
+      "code": "515710",
       "name": "食品饮料ETF",
       "category": "消费",
-      "price": "0.5580",
-      "dayReturn": "-0.71%",
-      "factor": "5.5695",
-      "strength": 0.9999709315671967,
+      "price": "0.5930",
+      "dayReturn": "-0.84%",
+      "factor": "2.0057",
+      "strength": 0.9644246936029623,
       "signal": "buy",
       "action": "建议买入",
       "date": "2026-01-13"
@@ -566,18 +554,6 @@
       "date": "2026-01-13"
     },
     {
-      "code": "516950",
-      "name": "基建50ETF",
-      "category": "消费",
-      "price": "1.2130",
-      "dayReturn": "-0.57%",
-      "factor": "1.5046",
-      "strength": 0.9059778333995644,
-      "signal": "buy",
-      "action": "建议买入",
-      "date": "2026-01-13"
-    },
-    {
       "code": "159638",
       "name": "酒ETF",
       "category": "消费",
@@ -585,18 +561,6 @@
       "dayReturn": "-8.54%",
       "factor": "10.0000",
       "strength": 0.9999999958776927,
-      "signal": "buy",
-      "action": "建议买入",
-      "date": "2026-01-13"
-    },
-    {
-      "code": "159566",
-      "name": "商品ETF",
-      "category": "消费",
-      "price": "2.1130",
-      "dayReturn": "-1.68%",
-      "factor": "4.3314",
-      "strength": 0.9996542389428056,
       "signal": "buy",
       "action": "建议买入",
       "date": "2026-01-13"
@@ -1202,13 +1166,13 @@
       "date": "2026-01-13"
     },
     {
-      "code": "159605",
+      "code": "164824",
       "name": "中概互联ETF",
       "category": "港股",
-      "price": "1.1360",
-      "dayReturn": "-0.35%",
-      "factor": "5.0191",
-      "strength": 0.999912615133632,
+      "price": "1.4430",
+      "dayReturn": "+0.07%",
+      "factor": "1.0694",
+      "strength": 0.7892466435541857,
       "signal": "buy",
       "action": "建议买入",
       "date": "2026-01-13"

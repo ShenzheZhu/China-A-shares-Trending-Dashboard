@@ -51,22 +51,19 @@ ETF_LIST = [
     {'code': '515980', 'name': '人工智能ETF', 'category': '科技'},
     {'code': '516630', 'name': '国防军工ETF', 'category': '科技'},
     
-    # ========== 消费 (15) ==========
+    # ========== 消费 (12) ==========
     {'code': '512690', 'name': '白酒ETF', 'category': '消费'},
     {'code': '159928', 'name': '消费ETF', 'category': '消费'},
-    {'code': '516110', 'name': '汽车ETF', 'category': '消费'},
     {'code': '159936', 'name': '黄金消费ETF', 'category': '消费'},
     {'code': '516650', 'name': '养殖ETF', 'category': '消费'},
     {'code': '159825', 'name': '农业ETF', 'category': '消费'},
-    {'code': '515170', 'name': '食品饮料ETF', 'category': '消费'},
+    {'code': '515710', 'name': '食品饮料ETF', 'category': '消费'},
     {'code': '516980', 'name': '旅游ETF', 'category': '消费'},
     {'code': '159766', 'name': '旅游酒店ETF', 'category': '消费'},
     {'code': '159996', 'name': '家电ETF', 'category': '消费'},
     {'code': '159768', 'name': '服装ETF', 'category': '消费'},
     {'code': '159865', 'name': '港股消费ETF', 'category': '消费'},
-    {'code': '516950', 'name': '基建50ETF', 'category': '消费'},
     {'code': '159638', 'name': '酒ETF', 'category': '消费'},
-    {'code': '159566', 'name': '商品ETF', 'category': '消费'},
     
     # ========== 医药 (12) ==========
     {'code': '512010', 'name': '医药ETF', 'category': '医药'},
@@ -129,7 +126,7 @@ ETF_LIST = [
     {'code': '513060', 'name': '恒生医疗ETF', 'category': '港股'},
     {'code': '513330', 'name': '港股互联网ETF', 'category': '港股'},
     {'code': '513180', 'name': '恒生科技指数ETF', 'category': '港股'},
-    {'code': '159605', 'name': '中概互联ETF', 'category': '港股'},
+    {'code': '164824', 'name': '中概互联ETF', 'category': '港股'},
     {'code': '513100', 'name': '纳指ETF', 'category': '港股'},
     {'code': '513500', 'name': '标普500ETF', 'category': '港股'},
     {'code': '159941', 'name': '纳指100ETF', 'category': '港股'},
