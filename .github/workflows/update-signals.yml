@@ -2,8 +2,8 @@ name: Update Trading Signals
 
 on:
   schedule:
-    # 每天北京时间15:35运行（收盘后）
-    - cron: '35 7 * * 1-5'
+    # 每天北京时间23:00运行（UTC 15:00）
+    - cron: '0 15 * * 1-5'
   workflow_dispatch:
 
 jobs:
