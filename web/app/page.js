@@ -326,23 +326,39 @@ export default function Home() {
         {showRules && (
           <div className="rules-content">
             <div className="rule-block">
-              <h4>市场情绪解读</h4>
+              <h4>MA20趋势策略（主策略）</h4>
               <table>
                 <tbody>
-                  <tr><td className="level-strong">情绪 &gt; 70%</td><td>市场整体偏多，可积极参与</td></tr>
-                  <tr><td className="level-medium">情绪 40-70%</td><td>市场震荡，谨慎操作</td></tr>
-                  <tr><td className="level-weak">情绪 &lt; 40%</td><td>市场偏空，建议观望</td></tr>
+                  <tr><td className="level-strong">站上MA20</td><td>价格 &gt; 20日均线，趋势向上，可持有</td></tr>
+                  <tr><td className="level-weak">跌破MA20</td><td>价格 &lt; 20日均线，趋势转弱，建议空仓</td></tr>
+                </tbody>
+              </table>
+              <p style={{marginTop:'0.5rem',fontSize:'0.75rem',color:'#a1a1aa'}}>
+                回测验证：2024.09-2026.01牛市，年化+17.6%，Sharpe 1.81，最大回撤-5.1%
+              </p>
+            </div>
+
+            <div className="rule-block">
+              <h4>偏离MA20解读</h4>
+              <table>
+                <tbody>
+                  <tr><td className="level-strong">+10%以上</td><td>短期涨幅较大，注意回调风险</td></tr>
+                  <tr><td className="level-medium">+1% ~ +10%</td><td>健康上涨，可持有</td></tr>
+                  <tr><td className="level-weak">负值</td><td>跌破均线，观望为主</td></tr>
                 </tbody>
               </table>
             </div>
 
             <div className="rule-block">
-              <h4>信号强度说明</h4>
+              <h4>量价因子（辅助参考）</h4>
+              <p style={{fontSize:'0.75rem',color:'#a1a1aa',marginBottom:'0.5rem'}}>
+                AI训练的量价因子，反映成交量与价格的异常程度，仅供参考
+              </p>
               <table>
                 <tbody>
-                  <tr><td className="level-strong">强度 &gt; 70%</td><td>强信号，可考虑建仓</td></tr>
-                  <tr><td className="level-medium">强度 30-70%</td><td>中等信号，观察为主</td></tr>
-                  <tr><td className="level-weak">强度 &lt; 30%</td><td>弱信号，建议空仓</td></tr>
+                  <tr><td className="level-strong">买入</td><td>因子强度 &gt; 70%</td></tr>
+                  <tr><td className="level-medium">观望</td><td>因子强度 30-70%</td></tr>
+                  <tr><td className="level-weak">回避</td><td>因子强度 &lt; 30%</td></tr>
                 </tbody>
               </table>
             </div>
@@ -350,20 +366,20 @@ export default function Home() {
             <div className="rule-block">
               <h4>操作建议</h4>
               <ul>
-                <li><strong>时间：</strong>每日14:00-14:55查看信号并决策</li>
-                <li><strong>仓位：</strong>单只ETF不超过总资金20%</li>
-                <li><strong>止损：</strong>设置5%止损线</li>
-                <li><strong>择时：</strong>信号强+价格下跌时可能是较好买点</li>
-                <li><strong>板块轮动：</strong>优先关注强度最高的板块</li>
+                <li><strong>核心策略：</strong>跟随MA20，站上持有，跌破离场</li>
+                <li><strong>买入时机：</strong>价格刚站上MA20（偏离+1%~+5%）</li>
+                <li><strong>卖出时机：</strong>价格跌破MA20</li>
+                <li><strong>仓位控制：</strong>单只ETF不超过总资金20%</li>
+                <li><strong>板块选择：</strong>优先选"站上MA20"比例高的板块</li>
               </ul>
             </div>
 
             <div className="rule-block">
               <h4>注意事项</h4>
               <ul>
-                <li>信号基于AI量化模型生成</li>
-                <li>极端行情时谨慎使用</li>
-                <li>信号仅供参考，需结合自身判断</li>
+                <li>MA20策略在趋势市有效，震荡市可能反复打脸</li>
+                <li>量价因子仅供辅助参考，不作为主要依据</li>
+                <li>信号每日23:00更新，基于收盘数据</li>
               </ul>
             </div>
           </div>
