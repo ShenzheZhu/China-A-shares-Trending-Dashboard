@@ -103,15 +103,21 @@ ETF_LIST = [
     {'code': '512980', 'name': '传媒ETF', 'category': '金融'},
     {'code': '159993', 'name': '龙头券商ETF', 'category': '金融'},
     
-    # ========== 地产基建 (8) ==========
+    # ========== 地产基建 (6) ==========
     {'code': '512200', 'name': '房地产ETF', 'category': '地产'},
     {'code': '159707', 'name': '建材ETF', 'category': '地产'},
     {'code': '516950', 'name': '基建ETF', 'category': '地产'},
     {'code': '516970', 'name': '央企改革ETF', 'category': '地产'},
     {'code': '159732', 'name': '国企一带一路ETF', 'category': '地产'},
     {'code': '516360', 'name': '建筑材料ETF', 'category': '地产'},
-    {'code': '159617', 'name': '钢铁ETF', 'category': '地产'},
-    {'code': '516780', 'name': '稀土ETF', 'category': '地产'},
+    
+    # ========== 有色金属 (6) ==========
+    {'code': '512400', 'name': '有色金属ETF', 'category': '有色'},
+    {'code': '159617', 'name': '钢铁ETF', 'category': '有色'},
+    {'code': '516780', 'name': '稀土ETF', 'category': '有色'},
+    {'code': '159880', 'name': '黄金ETF', 'category': '有色'},
+    {'code': '159812', 'name': '铜ETF', 'category': '有色'},
+    {'code': '159671', 'name': '煤炭ETF', 'category': '有色'},
     
     # ========== 债券货币 (5) ==========
     {'code': '511260', 'name': '国债ETF', 'category': '债券'},

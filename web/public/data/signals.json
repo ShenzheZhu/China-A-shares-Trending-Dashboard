@@ -1,5 +1,5 @@
 {
-  "updateTime": "2026-01-14T15:21:58.555775",
+  "updateTime": "2026-01-14T10:34:24.524841",
   "etfs": [
     {
       "code": "510300",
@@ -1022,9 +1022,21 @@
       "date": "2026-01-14"
     },
     {
+      "code": "512400",
+      "name": "有色金属ETF",
+      "category": "有色",
+      "price": "2.1480",
+      "dayReturn": "+0.33%",
+      "factor": "3.2788",
+      "strength": 0.9971654999108406,
+      "signal": "buy",
+      "action": "建议买入",
+      "date": "2026-01-14"
+    },
+    {
       "code": "159617",
       "name": "钢铁ETF",
-      "category": "地产",
+      "category": "有色",
       "price": "1.4120",
       "dayReturn": "+0.43%",
       "factor": "0.3162",
@@ -1036,11 +1048,47 @@
     {
       "code": "516780",
       "name": "稀土ETF",
-      "category": "地产",
+      "category": "有色",
       "price": "1.9690",
       "dayReturn": "-1.01%",
       "factor": "4.5537",
       "strength": 0.9997783344205398,
+      "signal": "buy",
+      "action": "建议买入",
+      "date": "2026-01-14"
+    },
+    {
+      "code": "159880",
+      "name": "黄金ETF",
+      "category": "有色",
+      "price": "2.1960",
+      "dayReturn": "+0.97%",
+      "factor": "0.6789",
+      "strength": 0.5907944662565474,
+      "signal": "hold",
+      "action": "观望",
+      "date": "2026-01-14"
+    },
+    {
+      "code": "159812",
+      "name": "铜ETF",
+      "category": "有色",
+      "price": "9.8800",
+      "dayReturn": "+1.23%",
+      "factor": "1.1785",
+      "strength": 0.8269674287335965,
+      "signal": "buy",
+      "action": "建议买入",
+      "date": "2026-01-14"
+    },
+    {
+      "code": "159671",
+      "name": "煤炭ETF",
+      "category": "有色",
+      "price": "1.4490",
+      "dayReturn": "-1.16%",
+      "factor": "3.2093",
+      "strength": 0.9967432170192874,
       "signal": "buy",
       "action": "建议买入",
       "date": "2026-01-14"
