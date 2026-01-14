@@ -103,21 +103,15 @@ ETF_LIST = [
     {'code': '512980', 'name': '传媒ETF', 'category': '金融'},
     {'code': '159993', 'name': '龙头券商ETF', 'category': '金融'},
     
-    # ========== 地产基建 (6) ==========
+    # ========== 地产基建 (8) ==========
     {'code': '512200', 'name': '房地产ETF', 'category': '地产'},
     {'code': '159707', 'name': '建材ETF', 'category': '地产'},
     {'code': '516950', 'name': '基建ETF', 'category': '地产'},
     {'code': '516970', 'name': '央企改革ETF', 'category': '地产'},
     {'code': '159732', 'name': '国企一带一路ETF', 'category': '地产'},
     {'code': '516360', 'name': '建筑材料ETF', 'category': '地产'},
-    
-    # ========== 有色金属 (6) ==========
-    {'code': '512400', 'name': '有色金属ETF', 'category': '有色'},
-    {'code': '159617', 'name': '钢铁ETF', 'category': '有色'},
-    {'code': '516780', 'name': '稀土ETF', 'category': '有色'},
-    {'code': '159880', 'name': '黄金ETF', 'category': '有色'},
-    {'code': '159812', 'name': '铜ETF', 'category': '有色'},
-    {'code': '159671', 'name': '煤炭ETF', 'category': '有色'},
+    {'code': '159617', 'name': '钢铁ETF', 'category': '地产'},
+    {'code': '516780', 'name': '稀土ETF', 'category': '地产'},
     
     # ========== 债券货币 (5) ==========
     {'code': '511260', 'name': '国债ETF', 'category': '债券'},
@@ -154,59 +148,48 @@ def generate_all_signals():
         print(f"处理 {etf['code']} {etf['name']}...")
         try:
             df = fetch_data(etf['code'], 'etf', days=120)
-            
-            # ========== 策略1: 量价因子 ==========
             feat_data = compute_features(df)
             factor = execute_formula(DEFAULT_FORMULA, feat_data)
             
             if factor is not None:
                 latest_factor = factor[-1].item()
+                # 因子值通过tanh压缩到[0,1]区间作为强度
                 strength = abs(np.tanh(latest_factor))
                 
+                # 信号逻辑：基于强度分级
+                # 强信号(>0.7): 建议买入
+                # 中等信号(0.3-0.7): 观望
+                # 弱信号(<0.3): 回避
                 if strength > 0.7:
-                    factor_signal = 'buy'
+                    signal = 'buy'
+                    action = '建议买入'
                 elif strength > 0.3:
-                    factor_signal = 'hold'
+                    signal = 'hold'
+                    action = '观望'
                 else:
-                    factor_signal = 'sell'
+                    signal = 'sell'
+                    action = '回避'
+                
+                # 计算日涨跌幅
+                if len(df) >= 2:
+                    day_return = (df['close'].iloc[-1] - df['close'].iloc[-2]) / df['close'].iloc[-2] * 100
+                else:
+                    day_return = 0
+                
+                results['etfs'].append({
+                    'code': etf['code'],
+                    'name': etf['name'],
+                    'category': etf.get('category', '其他'),
+                    'price': f"{df['close'].iloc[-1]:.4f}",
+                    'dayReturn': f"{day_return:+.2f}%",
+                    'factor': f"{latest_factor:.4f}",
+                    'strength': strength,
+                    'signal': signal,
+                    'action': action,
+                    'date': str(df['trade_date'].iloc[-1])
+                })
             else:
-                latest_factor = 0
-                strength = 0
-                factor_signal = 'hold'
-            
-            # ========== 策略2: MA20均线 ==========
-            df['MA20'] = df['close'].rolling(20).mean()
-            latest_price = df['close'].iloc[-1]
-            latest_ma20 = df['MA20'].iloc[-1] if not np.isnan(df['MA20'].iloc[-1]) else latest_price
-            
-            # MA信号：价格>MA20则买入，否则卖出
-            ma_above = latest_price > latest_ma20
-            ma_signal = 'buy' if ma_above else 'sell'
-            ma_diff = (latest_price / latest_ma20 - 1) * 100 if latest_ma20 > 0 else 0
-            
-            # 计算日涨跌幅
-            if len(df) >= 2:
-                day_return = (df['close'].iloc[-1] - df['close'].iloc[-2]) / df['close'].iloc[-2] * 100
-            else:
-                day_return = 0
-            
-            results['etfs'].append({
-                'code': etf['code'],
-                'name': etf['name'],
-                'category': etf.get('category', '其他'),
-                'price': f"{df['close'].iloc[-1]:.4f}",
-                'dayReturn': f"{day_return:+.2f}%",
-                # 量价因子
-                'factor': f"{latest_factor:.4f}",
-                'strength': strength,
-                'factorSignal': factor_signal,
-                # MA20均线
-                'ma20': f"{latest_ma20:.4f}",
-                'maDiff': f"{ma_diff:+.1f}%",
-                'maSignal': ma_signal,
-                # 日期
-                'date': str(df['trade_date'].iloc[-1])
-            })
+                print(f"  ⚠️ {etf['code']} 公式执行失败")
         except Exception as e:
             print(f"  ❌ {etf['code']} 错误: {e}")
     

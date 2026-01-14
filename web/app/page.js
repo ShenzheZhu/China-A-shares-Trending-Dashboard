@@ -35,10 +35,6 @@ export default function Home() {
     if (signal === 'sell') return '回避'
     return '观望'
   }
-  
-  const getMaSignalText = (signal) => {
-    return signal === 'buy' ? '站上MA20' : '跌破MA20'
-  }
 
   const categories = ['all', ...new Set(signals?.etfs?.map(e => e.category) || [])]
   const filteredETFs = (signals?.etfs || [])
@@ -47,25 +43,11 @@ export default function Home() {
       e.name.toLowerCase().includes(search.toLowerCase()) || 
       e.code.includes(search)
     )
-    .sort((a, b) => {
-      // 先按MA信号排序（buy在前），再按偏离度排序
-      if (a.maSignal !== b.maSignal) {
-        return a.maSignal === 'buy' ? -1 : 1
-      }
-      // 同信号内按偏离度排序（站上MA20的按偏离大排，跌破的按偏离小排）
-      const aDiff = parseFloat(a.maDiff)
-      const bDiff = parseFloat(b.maDiff)
-      return bDiff - aDiff
-    })
 
-  // 统计 - 量价因子
-  const buyCount = signals?.etfs?.filter(e => e.factorSignal === 'buy').length || 0
-  const holdCount = signals?.etfs?.filter(e => e.factorSignal === 'hold').length || 0
+  // 统计
+  const buyCount = signals?.etfs?.filter(e => e.signal === 'buy').length || 0
+  const holdCount = signals?.etfs?.filter(e => e.signal === 'hold').length || 0
   const total = signals?.etfs?.length || 0
-  
-  // 统计 - MA20均线
-  const maAboveCount = signals?.etfs?.filter(e => e.maSignal === 'buy').length || 0
-  const maBelowCount = signals?.etfs?.filter(e => e.maSignal === 'sell').length || 0
 
   // 板块分析
   const getSectorAnalysis = () => {
@@ -141,15 +123,15 @@ export default function Home() {
       <div className="overview">
         <div className="stat-card" style={{borderLeftColor: moodColor}}>
           <span className="stat-num">{(avgStrength * 100).toFixed(0)}%</span>
-          <span className="stat-label">量价情绪</span>
+          <span className="stat-label">市场情绪 · {marketMood}</span>
         </div>
         <div className="stat-card buy">
-          <span className="stat-num">{maAboveCount}</span>
-          <span className="stat-label">站上MA20</span>
+          <span className="stat-num">{buyCount}</span>
+          <span className="stat-label">做多信号</span>
         </div>
-        <div className="stat-card sell">
-          <span className="stat-num">{maBelowCount}</span>
-          <span className="stat-label">跌破MA20</span>
+        <div className="stat-card hold">
+          <span className="stat-num">{holdCount}</span>
+          <span className="stat-label">观望</span>
         </div>
         <div className="stat-card neutral">
           <span className="stat-num">{total}</span>
@@ -159,18 +141,15 @@ export default function Home() {
 
       {/* 板块分析 */}
       <div className="analysis-section">
-        <h3>📊 板块分析 (MA20趋势)</h3>
+        <h3>📊 板块分析</h3>
         <div className="sector-grid">
           {sectorAnalysis.map(sector => {
-            // 计算板块内站上MA20的比例
-            const maAbove = sector.items.filter(e => e.maSignal === 'buy').length
-            const maRatio = maAbove / sector.count
-            const signal = maRatio > 0.7 ? 'buy' : maRatio > 0.3 ? 'hold' : 'sell'
-            const recommendation = maRatio > 0.7 
-              ? '强势' 
-              : maRatio > 0.3 
-                ? '震荡' 
-                : '弱势'
+            const signal = sector.avgStrength > 0.7 ? 'buy' : sector.avgStrength > 0.3 ? 'hold' : 'sell'
+            const recommendation = sector.avgStrength > 0.7 
+              ? '建议买入' 
+              : sector.avgStrength > 0.3 
+                ? '建议观望' 
+                : '建议回避'
             
             return (
               <div className={`sector-card ${signal}`} key={sector.name}>
@@ -180,8 +159,8 @@ export default function Home() {
                 </div>
                 <div className="sector-stats">
                   <div className="sector-stat">
-                    <span className="stat-value">{maAbove}/{sector.count}</span>
-                    <span className="stat-desc">站上MA20</span>
+                    <span className="stat-value">{(sector.avgStrength * 100).toFixed(0)}%</span>
+                    <span className="stat-desc">信号强度</span>
                   </div>
                   <div className="sector-stat">
                     <span className={`stat-value ${sector.avgReturn >= 0 ? 'positive' : 'negative'}`}>
@@ -193,12 +172,12 @@ export default function Home() {
                 <div className="sector-bar">
                   <div 
                     className={`sector-bar-fill ${signal}`} 
-                    style={{width: `${maRatio * 100}%`}}
+                    style={{width: `${sector.avgStrength * 100}%`}}
                   />
                 </div>
                 <div className="sector-items">
                   {sector.items.map(e => (
-                    <span key={e.code} className={`sector-item ${e.maSignal === 'buy' ? 'above' : 'below'}`}>
+                    <span key={e.code} className="sector-item">
                       {e.name.replace('ETF', '')}
                     </span>
                   ))}
@@ -211,65 +190,46 @@ export default function Home() {
 
       {/* 今日建议 */}
       <div className="recommendation-section">
-        <h3>💡 今日操作建议 (MA20趋势策略)</h3>
+        <h3>💡 今日操作建议</h3>
         <div className="recommendation-grid">
           <div className="rec-card buy">
-            <h4>刚站上MA20 - 可买入</h4>
+            <h4>可考虑买入</h4>
             <ul>
-              {signals?.etfs
-                ?.filter(e => e.maSignal === 'buy')
-                .map(e => ({...e, diffNum: parseFloat(e.maDiff)}))
-                .filter(e => e.diffNum > 0 && e.diffNum <= 10)
-                .sort((a, b) => a.diffNum - b.diffNum)
-                .slice(0, 8)
-                .map(e => (
+              {signals?.etfs?.filter(e => e.strength > 0.7).slice(0, 5).map(e => (
                 <li key={e.code}>
                   <span className="rec-name">{e.name}</span>
                   <span className="rec-code">{e.code}</span>
-                  <span className="rec-strength">{e.maDiff}</span>
+                  <span className="rec-strength">{(e.strength * 100).toFixed(0)}%</span>
                 </li>
               ))}
-              {signals?.etfs?.filter(e => e.maSignal === 'buy' && parseFloat(e.maDiff) <= 10).length === 0 && 
-                <li className="empty">无</li>
-              }
             </ul>
           </div>
           <div className="rec-card hold">
-            <h4>强势上涨 - 持有</h4>
+            <h4>建议观望</h4>
             <ul>
-              {signals?.etfs
-                ?.filter(e => e.maSignal === 'buy')
-                .map(e => ({...e, diffNum: parseFloat(e.maDiff)}))
-                .filter(e => e.diffNum > 10)
-                .sort((a, b) => b.diffNum - a.diffNum)
-                .slice(0, 8)
-                .map(e => (
+              {signals?.etfs?.filter(e => e.strength <= 0.7 && e.strength > 0.3).map(e => (
                 <li key={e.code}>
                   <span className="rec-name">{e.name}</span>
                   <span className="rec-code">{e.code}</span>
-                  <span className="rec-strength">{e.maDiff}</span>
+                  <span className="rec-strength">{(e.strength * 100).toFixed(0)}%</span>
                 </li>
               ))}
-              {signals?.etfs?.filter(e => e.maSignal === 'buy' && parseFloat(e.maDiff) > 10).length === 0 && 
+              {signals?.etfs?.filter(e => e.strength <= 0.7 && e.strength > 0.3).length === 0 && 
                 <li className="empty">无</li>
               }
             </ul>
           </div>
           <div className="rec-card avoid">
-            <h4>跌破MA20 - 空仓</h4>
+            <h4>建议回避</h4>
             <ul>
-              {signals?.etfs
-                ?.filter(e => e.maSignal === 'sell')
-                .sort((a, b) => parseFloat(a.maDiff) - parseFloat(b.maDiff))
-                .slice(0, 8)
-                .map(e => (
+              {signals?.etfs?.filter(e => e.strength <= 0.3).map(e => (
                 <li key={e.code}>
                   <span className="rec-name">{e.name}</span>
                   <span className="rec-code">{e.code}</span>
-                  <span className="rec-strength">{e.maDiff}</span>
+                  <span className="rec-strength">{(e.strength * 100).toFixed(0)}%</span>
                 </li>
               ))}
-              {signals?.etfs?.filter(e => e.maSignal === 'sell').length === 0 && 
+              {signals?.etfs?.filter(e => e.strength <= 0.3).length === 0 && 
                 <li className="empty">无</li>
               }
             </ul>
@@ -315,11 +275,9 @@ export default function Home() {
                 <h2>{etf.name}</h2>
                 <p className="code">{etf.code}</p>
               </div>
-              <div className="dual-signals">
-                <span className={`signal-badge small ${etf.maSignal}`} title="MA20趋势">
-                  {getMaSignalText(etf.maSignal)}
-                </span>
-              </div>
+              <span className={`signal-badge ${etf.signal}`}>
+                {getSignalText(etf.signal)}
+              </span>
             </div>
 
             <div className="metrics">
@@ -334,31 +292,23 @@ export default function Home() {
                 </p>
               </div>
               <div className="metric">
-                <p className="metric-label">MA20</p>
-                <p className="metric-value">¥{etf.ma20}</p>
+                <p className="metric-label">因子值</p>
+                <p className={`metric-value ${parseFloat(etf.factor) > 0 ? 'positive' : 'negative'}`}>
+                  {etf.factor > 0 ? '+' : ''}{etf.factor}
+                </p>
               </div>
               <div className="metric">
-                <p className="metric-label">偏离MA20</p>
-                <p className={`metric-value ${parseFloat(etf.maDiff) >= 0 ? 'positive' : 'negative'}`}>
-                  {etf.maDiff}
-                </p>
+                <p className="metric-label">强度</p>
+                <p className="metric-value">{(etf.strength * 100).toFixed(0)}%</p>
               </div>
             </div>
 
-            <div className="dual-strategy">
-              <div className={`strategy-item ${
-                etf.maSignal === 'sell' ? 'sell' : 
-                parseFloat(etf.maDiff) > 10 ? 'hold' : 'buy'
-              }`}>
-                <span className="strategy-label">趋势策略</span>
-                <span className="strategy-value">{
-                  etf.maSignal === 'sell' ? '卖出' :
-                  parseFloat(etf.maDiff) > 10 ? '观望' : '买入'
-                }</span>
-              </div>
-              <div className={`strategy-item ${etf.factorSignal}`}>
-                <span className="strategy-label">量价因子</span>
-                <span className="strategy-value">{getSignalText(etf.factorSignal)}</span>
+            <div className="strength-bar">
+              <div className="bar-container">
+                <div 
+                  className={`bar-fill ${etf.signal}`}
+                  style={{ width: `${Math.abs(etf.strength) * 100}%` }}
+                />
               </div>
             </div>
           </div>
@@ -375,39 +325,23 @@ export default function Home() {
         {showRules && (
           <div className="rules-content">
             <div className="rule-block">
-              <h4>MA20趋势策略（主策略）</h4>
+              <h4>市场情绪解读</h4>
               <table>
                 <tbody>
-                  <tr><td className="level-strong">站上MA20</td><td>价格 &gt; 20日均线，趋势向上，可持有</td></tr>
-                  <tr><td className="level-weak">跌破MA20</td><td>价格 &lt; 20日均线，趋势转弱，建议空仓</td></tr>
-                </tbody>
-              </table>
-              <p style={{marginTop:'0.5rem',fontSize:'0.75rem',color:'#a1a1aa'}}>
-                回测验证：2024.09-2026.01牛市，年化+17.6%，Sharpe 1.81，最大回撤-5.1%
-              </p>
-            </div>
-
-            <div className="rule-block">
-              <h4>偏离MA20解读</h4>
-              <table>
-                <tbody>
-                  <tr><td className="level-strong">+10%以上</td><td>短期涨幅较大，注意回调风险</td></tr>
-                  <tr><td className="level-medium">+1% ~ +10%</td><td>健康上涨，可持有</td></tr>
-                  <tr><td className="level-weak">负值</td><td>跌破均线，观望为主</td></tr>
+                  <tr><td className="level-strong">情绪 &gt; 70%</td><td>市场整体偏多，可积极参与</td></tr>
+                  <tr><td className="level-medium">情绪 40-70%</td><td>市场震荡，谨慎操作</td></tr>
+                  <tr><td className="level-weak">情绪 &lt; 40%</td><td>市场偏空，建议观望</td></tr>
                 </tbody>
               </table>
             </div>
 
             <div className="rule-block">
-              <h4>量价因子（辅助参考）</h4>
-              <p style={{fontSize:'0.75rem',color:'#a1a1aa',marginBottom:'0.5rem'}}>
-                AI训练的量价因子，反映成交量与价格的异常程度，仅供参考
-              </p>
+              <h4>信号强度说明</h4>
               <table>
                 <tbody>
-                  <tr><td className="level-strong">买入</td><td>因子强度 &gt; 70%</td></tr>
-                  <tr><td className="level-medium">观望</td><td>因子强度 30-70%</td></tr>
-                  <tr><td className="level-weak">回避</td><td>因子强度 &lt; 30%</td></tr>
+                  <tr><td className="level-strong">强度 &gt; 70%</td><td>强信号，可考虑建仓</td></tr>
+                  <tr><td className="level-medium">强度 30-70%</td><td>中等信号，观察为主</td></tr>
+                  <tr><td className="level-weak">强度 &lt; 30%</td><td>弱信号，建议空仓</td></tr>
                 </tbody>
               </table>
             </div>
@@ -415,20 +349,20 @@ export default function Home() {
             <div className="rule-block">
               <h4>操作建议</h4>
               <ul>
-                <li><strong>核心策略：</strong>跟随MA20，站上持有，跌破离场</li>
-                <li><strong>买入时机：</strong>价格刚站上MA20（偏离+1%~+5%）</li>
-                <li><strong>卖出时机：</strong>价格跌破MA20</li>
-                <li><strong>仓位控制：</strong>单只ETF不超过总资金20%</li>
-                <li><strong>板块选择：</strong>优先选"站上MA20"比例高的板块</li>
+                <li><strong>时间：</strong>每日14:00-14:55查看信号并决策</li>
+                <li><strong>仓位：</strong>单只ETF不超过总资金20%</li>
+                <li><strong>止损：</strong>设置5%止损线</li>
+                <li><strong>择时：</strong>信号强+价格下跌时可能是较好买点</li>
+                <li><strong>板块轮动：</strong>优先关注强度最高的板块</li>
               </ul>
             </div>
 
             <div className="rule-block">
               <h4>注意事项</h4>
               <ul>
-                <li>MA20策略在趋势市有效，震荡市可能反复打脸</li>
-                <li>量价因子仅供辅助参考，不作为主要依据</li>
-                <li>信号每日23:00更新，基于收盘数据</li>
+                <li>信号基于AI量化模型生成</li>
+                <li>极端行情时谨慎使用</li>
+                <li>信号仅供参考，需结合自身判断</li>
               </ul>
             </div>
           </div>
