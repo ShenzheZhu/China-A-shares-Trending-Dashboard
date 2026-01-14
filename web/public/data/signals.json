@@ -1,5 +1,5 @@
 {
-  "updateTime": "2026-01-14T12:40:07.459272",
+  "updateTime": "2026-01-14T17:46:31.799406",
   "etfs": [
     {
       "code": "510300",
@@ -9,8 +9,11 @@
       "dayReturn": "-0.61%",
       "factor": "7.3232",
       "strength": 0.9999991286517768,
-      "signal": "buy",
-      "action": "建议买入",
+      "factorSignal": "buy",
+      "ma20": "4.7914",
+      "maDiff": "+1.6%",
+      "maSignal": "buy",
+      "signalChange": "none",
       "date": "2026-01-14"
     },
     {
@@ -21,8 +24,11 @@
       "dayReturn": "+0.71%",
       "factor": "2.4573",
       "strength": 0.9854302268350357,
-      "signal": "buy",
-      "action": "建议买入",
+      "factorSignal": "buy",
+      "ma20": "7.7007",
+      "maDiff": "+8.6%",
+      "maSignal": "buy",
+      "signalChange": "none",
       "date": "2026-01-14"
     },
     {
@@ -33,8 +39,11 @@
       "dayReturn": "+0.79%",
       "factor": "3.7638",
       "strength": 0.9989244635381513,
-      "signal": "buy",
-      "action": "建议买入",
+      "factorSignal": "buy",
+      "ma20": "3.2284",
+      "maDiff": "+3.2%",
+      "maSignal": "buy",
+      "signalChange": "none",
       "date": "2026-01-14"
     },
     {
@@ -45,8 +54,11 @@
       "dayReturn": "+1.94%",
       "factor": "2.1479",
       "strength": 0.9731134930065303,
-      "signal": "buy",
-      "action": "建议买入",
+      "factorSignal": "buy",
+      "ma20": "1.4585",
+      "maDiff": "+8.3%",
+      "maSignal": "buy",
+      "signalChange": "none",
       "date": "2026-01-14"
     },
     {
@@ -57,8 +69,11 @@
       "dayReturn": "-0.84%",
       "factor": "8.5465",
       "strength": 0.999999924549886,
-      "signal": "buy",
-      "action": "建议买入",
+      "factorSignal": "buy",
+      "ma20": "3.1358",
+      "maDiff": "+1.6%",
+      "maSignal": "buy",
+      "signalChange": "none",
       "date": "2026-01-14"
     },
     {
@@ -69,8 +84,11 @@
       "dayReturn": "-0.54%",
       "factor": "7.4348",
       "strength": 0.9999993029492994,
-      "signal": "buy",
-      "action": "建议买入",
+      "factorSignal": "buy",
+      "ma20": "4.8679",
+      "maDiff": "+1.6%",
+      "maSignal": "buy",
+      "signalChange": "none",
       "date": "2026-01-14"
     },
     {
@@ -81,8 +99,11 @@
       "dayReturn": "-0.54%",
       "factor": "7.3494",
       "strength": 0.9999991731660127,
-      "signal": "buy",
-      "action": "建议买入",
+      "factorSignal": "buy",
+      "ma20": "4.8603",
+      "maDiff": "+1.6%",
+      "maSignal": "buy",
+      "signalChange": "none",
       "date": "2026-01-14"
     },
     {
@@ -93,8 +114,11 @@
       "dayReturn": "+0.11%",
       "factor": "4.3479",
       "strength": 0.9996654855259599,
-      "signal": "buy",
-      "action": "建议买入",
+      "factorSignal": "buy",
+      "ma20": "3.4805",
+      "maDiff": "+1.0%",
+      "maSignal": "buy",
+      "signalChange": "none",
       "date": "2026-01-14"
     },
     {
@@ -105,8 +129,11 @@
       "dayReturn": "+0.24%",
       "factor": "4.1062",
       "strength": 0.9994575790710745,
-      "signal": "buy",
-      "action": "建议买入",
+      "factorSignal": "buy",
+      "ma20": "3.1200",
+      "maDiff": "+7.2%",
+      "maSignal": "buy",
+      "signalChange": "none",
       "date": "2026-01-14"
     },
     {
@@ -117,8 +144,11 @@
       "dayReturn": "+0.24%",
       "factor": "4.4041",
       "strength": 0.9997010332977879,
-      "signal": "buy",
-      "action": "建议买入",
+      "factorSignal": "buy",
+      "ma20": "3.1631",
+      "maDiff": "+7.1%",
+      "maSignal": "buy",
+      "signalChange": "none",
       "date": "2026-01-14"
     },
     {
@@ -129,8 +159,11 @@
       "dayReturn": "+0.95%",
       "factor": "2.3690",
       "strength": 0.9826386751979828,
-      "signal": "buy",
-      "action": "建议买入",
+      "factorSignal": "buy",
+      "ma20": "3.0390",
+      "maDiff": "+8.7%",
+      "maSignal": "buy",
+      "signalChange": "none",
       "date": "2026-01-14"
     },
     {
@@ -141,8 +174,11 @@
       "dayReturn": "+2.07%",
       "factor": "0.8635",
       "strength": 0.6980734995272531,
-      "signal": "hold",
-      "action": "观望",
+      "factorSignal": "hold",
+      "ma20": "1.4119",
+      "maDiff": "+8.4%",
+      "maSignal": "buy",
+      "signalChange": "none",
       "date": "2026-01-14"
     },
     {
@@ -153,8 +189,11 @@
       "dayReturn": "+0.44%",
       "factor": "4.1520",
       "strength": 0.9995050932575552,
-      "signal": "buy",
-      "action": "建议买入",
+      "factorSignal": "buy",
+      "ma20": "1.1041",
+      "maDiff": "+3.3%",
+      "maSignal": "buy",
+      "signalChange": "none",
       "date": "2026-01-14"
     },
     {
@@ -165,8 +204,11 @@
       "dayReturn": "+0.08%",
       "factor": "5.1731",
       "strength": 0.9999357764270125,
-      "signal": "buy",
-      "action": "建议买入",
+      "factorSignal": "buy",
+      "ma20": "1.2918",
+      "maDiff": "+2.2%",
+      "maSignal": "buy",
+      "signalChange": "none",
       "date": "2026-01-14"
     },
     {
@@ -177,8 +219,11 @@
       "dayReturn": "+2.05%",
       "factor": "0.9812",
       "strength": 0.7535737702649201,
-      "signal": "buy",
-      "action": "建议买入",
+      "factorSignal": "buy",
+      "ma20": "1.4244",
+      "maDiff": "+8.3%",
+      "maSignal": "buy",
+      "signalChange": "none",
       "date": "2026-01-14"
     },
     {
@@ -189,8 +234,11 @@
       "dayReturn": "+1.51%",
       "factor": "0.8789",
       "strength": 0.7058644394261722,
-      "signal": "buy",
-      "action": "建议买入",
+      "factorSignal": "buy",
+      "ma20": "1.5040",
+      "maDiff": "+7.5%",
+      "maSignal": "buy",
+      "signalChange": "none",
       "date": "2026-01-14"
     },
     {
@@ -201,8 +249,11 @@
       "dayReturn": "+1.54%",
       "factor": "0.1308",
       "strength": 0.1300217569053715,
-      "signal": "sell",
-      "action": "回避",
+      "factorSignal": "sell",
+      "ma20": "1.6595",
+      "maDiff": "+7.1%",
+      "maSignal": "buy",
+      "signalChange": "none",
       "date": "2026-01-14"
     },
     {
@@ -213,8 +264,11 @@
       "dayReturn": "+1.39%",
       "factor": "0.4640",
       "strength": 0.4333584949330345,
-      "signal": "hold",
-      "action": "观望",
+      "factorSignal": "hold",
+      "ma20": "2.2824",
+      "maDiff": "+2.2%",
+      "maSignal": "buy",
+      "signalChange": "none",
       "date": "2026-01-14"
     },
     {
@@ -225,8 +279,11 @@
       "dayReturn": "+0.71%",
       "factor": "2.5668",
       "strength": 0.9882778393710956,
-      "signal": "buy",
-      "action": "建议买入",
+      "factorSignal": "buy",
+      "ma20": "1.3805",
+      "maDiff": "+13.2%",
+      "maSignal": "buy",
+      "signalChange": "none",
       "date": "2026-01-14"
     },
     {
@@ -237,8 +294,11 @@
       "dayReturn": "+1.50%",
       "factor": "0.4396",
       "strength": 0.41331983841034364,
-      "signal": "hold",
-      "action": "观望",
+      "factorSignal": "hold",
+      "ma20": "1.7794",
+      "maDiff": "+6.8%",
+      "maSignal": "buy",
+      "signalChange": "none",
       "date": "2026-01-14"
     },
     {
@@ -249,8 +309,11 @@
       "dayReturn": "-0.17%",
       "factor": "0.6181",
       "strength": 0.5498081529243872,
-      "signal": "hold",
-      "action": "观望",
+      "factorSignal": "hold",
+      "ma20": "2.8857",
+      "maDiff": "+4.1%",
+      "maSignal": "buy",
+      "signalChange": "none",
       "date": "2026-01-14"
     },
     {
@@ -261,8 +324,11 @@
       "dayReturn": "+0.39%",
       "factor": "3.7362",
       "strength": 0.9988635914778866,
-      "signal": "buy",
-      "action": "建议买入",
+      "factorSignal": "buy",
+      "ma20": "0.9805",
+      "maDiff": "+5.7%",
+      "maSignal": "buy",
+      "signalChange": "none",
       "date": "2026-01-14"
     },
     {
@@ -273,8 +339,11 @@
       "dayReturn": "+0.00%",
       "factor": "5.0000",
       "strength": 0.9999092042625951,
-      "signal": "buy",
-      "action": "建议买入",
+      "factorSignal": "buy",
+      "ma20": "1.0232",
+      "maDiff": "+1.1%",
+      "maSignal": "buy",
+      "signalChange": "none",
       "date": "2026-01-14"
     },
     {
@@ -285,8 +354,11 @@
       "dayReturn": "-0.72%",
       "factor": "4.4571",
       "strength": 0.9997311240745542,
-      "signal": "buy",
-      "action": "建议买入",
+      "factorSignal": "buy",
+      "ma20": "0.5571",
+      "maDiff": "-0.5%",
+      "maSignal": "sell",
+      "signalChange": "breakdown",
       "date": "2026-01-14"
     },
     {
@@ -297,8 +369,11 @@
       "dayReturn": "+1.83%",
       "factor": "0.2984",
       "strength": 0.28981095356822056,
-      "signal": "sell",
-      "action": "回避",
+      "factorSignal": "sell",
+      "ma20": "3.0879",
+      "maDiff": "+2.9%",
+      "maSignal": "buy",
+      "signalChange": "none",
       "date": "2026-01-14"
     },
     {
@@ -309,8 +384,11 @@
       "dayReturn": "+4.36%",
       "factor": "0.0000",
       "strength": 0.0,
-      "signal": "sell",
-      "action": "回避",
+      "factorSignal": "sell",
+      "ma20": "1.2243",
+      "maDiff": "+15.4%",
+      "maSignal": "buy",
+      "signalChange": "none",
       "date": "2026-01-14"
     },
     {
@@ -321,8 +399,11 @@
       "dayReturn": "+4.14%",
       "factor": "0.0000",
       "strength": 0.0,
-      "signal": "sell",
-      "action": "回避",
+      "factorSignal": "sell",
+      "ma20": "1.0231",
+      "maDiff": "+15.4%",
+      "maSignal": "buy",
+      "signalChange": "none",
       "date": "2026-01-14"
     },
     {
@@ -333,8 +414,11 @@
       "dayReturn": "-0.49%",
       "factor": "0.7113",
       "strength": 0.6115018400261919,
-      "signal": "hold",
-      "action": "观望",
+      "factorSignal": "hold",
+      "ma20": "1.4182",
+      "maDiff": "+0.6%",
+      "maSignal": "buy",
+      "signalChange": "none",
       "date": "2026-01-14"
     },
     {
@@ -345,8 +429,11 @@
       "dayReturn": "+4.38%",
       "factor": "0.0000",
       "strength": 0.0,
-      "signal": "sell",
-      "action": "回避",
+      "factorSignal": "sell",
+      "ma20": "0.9172",
+      "maDiff": "+19.5%",
+      "maSignal": "buy",
+      "signalChange": "none",
       "date": "2026-01-14"
     },
     {
@@ -357,8 +444,11 @@
       "dayReturn": "+4.65%",
       "factor": "0.0000",
       "strength": 0.0,
-      "signal": "sell",
-      "action": "回避",
+      "factorSignal": "sell",
+      "ma20": "1.7546",
+      "maDiff": "+18.0%",
+      "maSignal": "buy",
+      "signalChange": "none",
       "date": "2026-01-14"
     },
     {
@@ -369,8 +459,11 @@
       "dayReturn": "-0.36%",
       "factor": "2.4312",
       "strength": 0.9846544677951578,
-      "signal": "buy",
-      "action": "建议买入",
+      "factorSignal": "buy",
+      "ma20": "1.0569",
+      "maDiff": "+4.1%",
+      "maSignal": "buy",
+      "signalChange": "none",
       "date": "2026-01-14"
     },
     {
@@ -381,8 +474,11 @@
       "dayReturn": "-1.15%",
       "factor": "6.0858",
       "strength": 0.999989648392038,
-      "signal": "buy",
-      "action": "建议买入",
+      "factorSignal": "buy",
+      "ma20": "0.9454",
+      "maDiff": "+9.3%",
+      "maSignal": "buy",
+      "signalChange": "none",
       "date": "2026-01-14"
     },
     {
@@ -393,8 +489,11 @@
       "dayReturn": "-0.78%",
       "factor": "4.1463",
       "strength": 0.9994994060294874,
-      "signal": "buy",
-      "action": "建议买入",
+      "factorSignal": "buy",
+      "ma20": "1.1437",
+      "maDiff": "+0.2%",
+      "maSignal": "buy",
+      "signalChange": "none",
       "date": "2026-01-14"
     },
     {
@@ -405,8 +504,11 @@
       "dayReturn": "+3.09%",
       "factor": "0.0000",
       "strength": 0.0,
-      "signal": "sell",
-      "action": "回避",
+      "factorSignal": "sell",
+      "ma20": "0.8881",
+      "maDiff": "+12.6%",
+      "maSignal": "buy",
+      "signalChange": "none",
       "date": "2026-01-14"
     },
     {
@@ -417,8 +519,11 @@
       "dayReturn": "+5.39%",
       "factor": "0.0000",
       "strength": 0.0,
-      "signal": "sell",
-      "action": "回避",
+      "factorSignal": "sell",
+      "ma20": "1.6802",
+      "maDiff": "+18.7%",
+      "maSignal": "buy",
+      "signalChange": "none",
       "date": "2026-01-14"
     },
     {
@@ -429,8 +534,11 @@
       "dayReturn": "-0.55%",
       "factor": "2.4704",
       "strength": 0.9858050332200425,
-      "signal": "buy",
-      "action": "建议买入",
+      "factorSignal": "buy",
+      "ma20": "0.5485",
+      "maDiff": "-0.6%",
+      "maSignal": "sell",
+      "signalChange": "none",
       "date": "2026-01-14"
     },
     {
@@ -441,8 +549,11 @@
       "dayReturn": "-0.50%",
       "factor": "6.6905",
       "strength": 0.9999969114773531,
-      "signal": "buy",
-      "action": "建议买入",
+      "factorSignal": "buy",
+      "ma20": "0.8016",
+      "maDiff": "-0.9%",
+      "maSignal": "sell",
+      "signalChange": "none",
       "date": "2026-01-14"
     },
     {
@@ -453,8 +564,11 @@
       "dayReturn": "-0.27%",
       "factor": "1.7785",
       "strength": 0.944531499925897,
-      "signal": "buy",
-      "action": "建议买入",
+      "factorSignal": "buy",
+      "ma20": "2.2054",
+      "maDiff": "+1.5%",
+      "maSignal": "buy",
+      "signalChange": "none",
       "date": "2026-01-14"
     },
     {
@@ -465,8 +579,11 @@
       "dayReturn": "+0.95%",
       "factor": "1.3622",
       "strength": 0.876896700871206,
-      "signal": "buy",
-      "action": "建议买入",
+      "factorSignal": "buy",
+      "ma20": "1.9042",
+      "maDiff": "+12.0%",
+      "maSignal": "buy",
+      "signalChange": "none",
       "date": "2026-01-14"
     },
     {
@@ -477,8 +594,11 @@
       "dayReturn": "-0.47%",
       "factor": "1.2002",
       "strength": 0.8337159889907748,
-      "signal": "buy",
-      "action": "建议买入",
+      "factorSignal": "buy",
+      "ma20": "0.8358",
+      "maDiff": "+0.5%",
+      "maSignal": "buy",
+      "signalChange": "none",
       "date": "2026-01-14"
     },
     {
@@ -489,8 +609,11 @@
       "dayReturn": "-0.67%",
       "factor": "2.8563",
       "strength": 0.9934139254463478,
-      "signal": "buy",
-      "action": "建议买入",
+      "factorSignal": "buy",
+      "ma20": "0.5933",
+      "maDiff": "-0.7%",
+      "maSignal": "sell",
+      "signalChange": "none",
       "date": "2026-01-14"
     },
     {
@@ -501,8 +624,11 @@
       "dayReturn": "-0.41%",
       "factor": "3.8756",
       "strength": 0.9991399777212903,
-      "signal": "buy",
-      "action": "建议买入",
+      "factorSignal": "buy",
+      "ma20": "1.2120",
+      "maDiff": "+1.2%",
+      "maSignal": "buy",
+      "signalChange": "none",
       "date": "2026-01-14"
     },
     {
@@ -513,8 +639,11 @@
       "dayReturn": "-0.12%",
       "factor": "0.2829",
       "strength": 0.2756164657505143,
-      "signal": "sell",
-      "action": "回避",
+      "factorSignal": "sell",
+      "ma20": "0.7958",
+      "maDiff": "+0.9%",
+      "maSignal": "buy",
+      "signalChange": "none",
       "date": "2026-01-14"
     },
     {
@@ -525,8 +654,11 @@
       "dayReturn": "+0.56%",
       "factor": "0.7703",
       "strength": 0.6471052649438538,
-      "signal": "hold",
-      "action": "观望",
+      "factorSignal": "hold",
+      "ma20": "1.5533",
+      "maDiff": "+3.5%",
+      "maSignal": "buy",
+      "signalChange": "none",
       "date": "2026-01-14"
     },
     {
@@ -537,8 +669,11 @@
       "dayReturn": "-1.77%",
       "factor": "5.7188",
       "strength": 0.9999784353910566,
-      "signal": "buy",
-      "action": "建议买入",
+      "factorSignal": "buy",
+      "ma20": "0.5578",
+      "maDiff": "-0.7%",
+      "maSignal": "sell",
+      "signalChange": "breakdown",
       "date": "2026-01-14"
     },
     {
@@ -549,8 +684,11 @@
       "dayReturn": "-0.32%",
       "factor": "0.4749",
       "strength": 0.4421540869149878,
-      "signal": "hold",
-      "action": "观望",
+      "factorSignal": "hold",
+      "ma20": "0.6359",
+      "maDiff": "-0.6%",
+      "maSignal": "sell",
+      "signalChange": "none",
       "date": "2026-01-14"
     },
     {
@@ -561,8 +699,11 @@
       "dayReturn": "-0.16%",
       "factor": "5.8069",
       "strength": 0.9999819180282521,
-      "signal": "buy",
-      "action": "建议买入",
+      "factorSignal": "buy",
+      "ma20": "1.0627",
+      "maDiff": "+14.7%",
+      "maSignal": "buy",
+      "signalChange": "none",
       "date": "2026-01-14"
     },
     {
@@ -573,8 +714,11 @@
       "dayReturn": "-0.73%",
       "factor": "6.7962",
       "strength": 0.99999750017281,
-      "signal": "buy",
-      "action": "建议买入",
+      "factorSignal": "buy",
+      "ma20": "0.3906",
+      "maDiff": "+4.2%",
+      "maSignal": "buy",
+      "signalChange": "none",
       "date": "2026-01-14"
     },
     {
@@ -585,8 +729,11 @@
       "dayReturn": "-1.32%",
       "factor": "8.9303",
       "strength": 0.9999999649865782,
-      "signal": "buy",
-      "action": "建议买入",
+      "factorSignal": "buy",
+      "ma20": "0.8627",
+      "maDiff": "+3.9%",
+      "maSignal": "buy",
+      "signalChange": "none",
       "date": "2026-01-14"
     },
     {
@@ -597,8 +744,11 @@
       "dayReturn": "-1.36%",
       "factor": "7.2142",
       "strength": 0.9999989163578497,
-      "signal": "buy",
-      "action": "建议买入",
+      "factorSignal": "buy",
+      "ma20": "1.0382",
+      "maDiff": "+4.8%",
+      "maSignal": "buy",
+      "signalChange": "none",
       "date": "2026-01-14"
     },
     {
@@ -609,8 +759,11 @@
       "dayReturn": "-0.78%",
       "factor": "8.9434",
       "strength": 0.999999965889392,
-      "signal": "buy",
-      "action": "建议买入",
+      "factorSignal": "buy",
+      "ma20": "0.3702",
+      "maDiff": "+2.6%",
+      "maSignal": "buy",
+      "signalChange": "none",
       "date": "2026-01-14"
     },
     {
@@ -621,8 +774,11 @@
       "dayReturn": "+1.09%",
       "factor": "1.0501",
       "strength": 0.7818576851915647,
-      "signal": "buy",
-      "action": "建议买入",
+      "factorSignal": "buy",
+      "ma20": "0.5104",
+      "maDiff": "+8.5%",
+      "maSignal": "buy",
+      "signalChange": "none",
       "date": "2026-01-14"
     },
     {
@@ -633,8 +789,11 @@
       "dayReturn": "+0.78%",
       "factor": "2.6047",
       "strength": 0.9891303352709653,
-      "signal": "buy",
-      "action": "建议买入",
+      "factorSignal": "buy",
+      "ma20": "0.3558",
+      "maDiff": "+9.6%",
+      "maSignal": "buy",
+      "signalChange": "none",
       "date": "2026-01-14"
     },
     {
@@ -645,8 +804,11 @@
       "dayReturn": "-0.77%",
       "factor": "3.3948",
       "strength": 0.9977517823008316,
-      "signal": "buy",
-      "action": "建议买入",
+      "factorSignal": "buy",
+      "ma20": "1.0053",
+      "maDiff": "+3.2%",
+      "maSignal": "buy",
+      "signalChange": "none",
       "date": "2026-01-14"
     },
     {
@@ -657,8 +819,11 @@
       "dayReturn": "-0.50%",
       "factor": "7.1081",
       "strength": 0.9999986602513935,
-      "signal": "buy",
-      "action": "建议买入",
+      "factorSignal": "buy",
+      "ma20": "0.9851",
+      "maDiff": "+0.5%",
+      "maSignal": "buy",
+      "signalChange": "none",
       "date": "2026-01-14"
     },
     {
@@ -669,8 +834,11 @@
       "dayReturn": "+1.04%",
       "factor": "1.3133",
       "strength": 0.8651041020007042,
-      "signal": "buy",
-      "action": "建议买入",
+      "factorSignal": "buy",
+      "ma20": "0.4420",
+      "maDiff": "+10.0%",
+      "maSignal": "buy",
+      "signalChange": "none",
       "date": "2026-01-14"
     },
     {
@@ -681,8 +849,11 @@
       "dayReturn": "-0.71%",
       "factor": "4.1170",
       "strength": 0.999469156918578,
-      "signal": "buy",
-      "action": "建议买入",
+      "factorSignal": "buy",
+      "ma20": "0.6704",
+      "maDiff": "+4.3%",
+      "maSignal": "buy",
+      "signalChange": "none",
       "date": "2026-01-14"
     },
     {
@@ -693,8 +864,11 @@
       "dayReturn": "+1.02%",
       "factor": "3.3494",
       "strength": 0.9975382777255271,
-      "signal": "buy",
-      "action": "建议买入",
+      "factorSignal": "buy",
+      "ma20": "1.2772",
+      "maDiff": "+8.8%",
+      "maSignal": "buy",
+      "signalChange": "none",
       "date": "2026-01-14"
     },
     {
@@ -705,8 +879,11 @@
       "dayReturn": "-0.22%",
       "factor": "0.8109",
       "strength": 0.6701138182029883,
-      "signal": "hold",
-      "action": "观望",
+      "factorSignal": "hold",
+      "ma20": "1.8219",
+      "maDiff": "-0.1%",
+      "maSignal": "sell",
+      "signalChange": "breakdown",
       "date": "2026-01-14"
     },
     {
@@ -717,8 +894,11 @@
       "dayReturn": "-1.19%",
       "factor": "2.8498",
       "strength": 0.9933273373278725,
-      "signal": "buy",
-      "action": "建议买入",
+      "factorSignal": "buy",
+      "ma20": "1.8578",
+      "maDiff": "+2.6%",
+      "maSignal": "buy",
+      "signalChange": "none",
       "date": "2026-01-14"
     },
     {
@@ -729,8 +909,11 @@
       "dayReturn": "+0.14%",
       "factor": "0.2755",
       "strength": 0.26874110699294296,
-      "signal": "sell",
-      "action": "回避",
+      "factorSignal": "sell",
+      "ma20": "0.6813",
+      "maDiff": "+4.2%",
+      "maSignal": "buy",
+      "signalChange": "none",
       "date": "2026-01-14"
     },
     {
@@ -741,8 +924,11 @@
       "dayReturn": "+0.43%",
       "factor": "1.9917",
       "strength": 0.9634375355763134,
-      "signal": "buy",
-      "action": "建议买入",
+      "factorSignal": "buy",
+      "ma20": "0.6732",
+      "maDiff": "+3.8%",
+      "maSignal": "buy",
+      "signalChange": "none",
       "date": "2026-01-14"
     },
     {
@@ -753,8 +939,11 @@
       "dayReturn": "+1.24%",
       "factor": "1.6428",
       "strength": 0.9278655432810268,
-      "signal": "buy",
-      "action": "建议买入",
+      "factorSignal": "buy",
+      "ma20": "1.1258",
+      "maDiff": "+8.5%",
+      "maSignal": "buy",
+      "signalChange": "none",
       "date": "2026-01-14"
     },
     {
@@ -765,8 +954,11 @@
       "dayReturn": "-0.34%",
       "factor": "2.1242",
       "strength": 0.9718273797415659,
-      "signal": "buy",
-      "action": "建议买入",
+      "factorSignal": "buy",
+      "ma20": "0.5643",
+      "maDiff": "+3.8%",
+      "maSignal": "buy",
+      "signalChange": "none",
       "date": "2026-01-14"
     },
     {
@@ -777,8 +969,11 @@
       "dayReturn": "-0.64%",
       "factor": "2.1597",
       "strength": 0.9737344288229571,
-      "signal": "buy",
-      "action": "建议买入",
+      "factorSignal": "buy",
+      "ma20": "1.0664",
+      "maDiff": "+1.7%",
+      "maSignal": "buy",
+      "signalChange": "none",
       "date": "2026-01-14"
     },
     {
@@ -789,8 +984,11 @@
       "dayReturn": "-0.94%",
       "factor": "3.0054",
       "strength": 0.995107690948285,
-      "signal": "buy",
-      "action": "建议买入",
+      "factorSignal": "buy",
+      "ma20": "0.9195",
+      "maDiff": "+3.1%",
+      "maSignal": "buy",
+      "signalChange": "none",
       "date": "2026-01-14"
     },
     {
@@ -801,8 +999,11 @@
       "dayReturn": "+0.39%",
       "factor": "0.1351",
       "strength": 0.13426686567572604,
-      "signal": "sell",
-      "action": "回避",
+      "factorSignal": "sell",
+      "ma20": "1.2546",
+      "maDiff": "+2.4%",
+      "maSignal": "buy",
+      "signalChange": "none",
       "date": "2026-01-14"
     },
     {
@@ -813,8 +1014,11 @@
       "dayReturn": "+0.12%",
       "factor": "2.4200",
       "strength": 0.9843085384764774,
-      "signal": "buy",
-      "action": "建议买入",
+      "factorSignal": "buy",
+      "ma20": "0.8502",
+      "maDiff": "+2.1%",
+      "maSignal": "buy",
+      "signalChange": "none",
       "date": "2026-01-14"
     },
     {
@@ -825,8 +1029,11 @@
       "dayReturn": "+0.59%",
       "factor": "1.7187",
       "strength": 0.9377025974948574,
-      "signal": "buy",
-      "action": "建议买入",
+      "factorSignal": "buy",
+      "ma20": "0.8135",
+      "maDiff": "+5.2%",
+      "maSignal": "buy",
+      "signalChange": "none",
       "date": "2026-01-14"
     },
     {
@@ -837,8 +1044,11 @@
       "dayReturn": "-0.72%",
       "factor": "6.8272",
       "strength": 0.9999976505744269,
-      "signal": "buy",
-      "action": "建议买入",
+      "factorSignal": "buy",
+      "ma20": "1.2279",
+      "maDiff": "+0.7%",
+      "maSignal": "buy",
+      "signalChange": "none",
       "date": "2026-01-14"
     },
     {
@@ -849,8 +1059,11 @@
       "dayReturn": "-1.35%",
       "factor": "8.5191",
       "strength": 0.9999999203021095,
-      "signal": "buy",
-      "action": "建议买入",
+      "factorSignal": "buy",
+      "ma20": "0.8176",
+      "maDiff": "-1.7%",
+      "maSignal": "sell",
+      "signalChange": "none",
       "date": "2026-01-14"
     },
     {
@@ -861,8 +1074,11 @@
       "dayReturn": "-1.05%",
       "factor": "3.3254",
       "strength": 0.9974174747588163,
-      "signal": "buy",
-      "action": "建议买入",
+      "factorSignal": "buy",
+      "ma20": "0.9396",
+      "maDiff": "-0.2%",
+      "maSignal": "sell",
+      "signalChange": "breakdown",
       "date": "2026-01-14"
     },
     {
@@ -873,8 +1089,11 @@
       "dayReturn": "-1.67%",
       "factor": "6.3285",
       "strength": 0.9999936297679856,
-      "signal": "buy",
-      "action": "建议买入",
+      "factorSignal": "buy",
+      "ma20": "1.7356",
+      "maDiff": "-1.8%",
+      "maSignal": "sell",
+      "signalChange": "none",
       "date": "2026-01-14"
     },
     {
@@ -885,8 +1104,11 @@
       "dayReturn": "-0.63%",
       "factor": "3.0438",
       "strength": 0.9954686381076732,
-      "signal": "buy",
-      "action": "建议买入",
+      "factorSignal": "buy",
+      "ma20": "2.5466",
+      "maDiff": "-0.1%",
+      "maSignal": "sell",
+      "signalChange": "breakdown",
       "date": "2026-01-14"
     },
     {
@@ -897,8 +1119,11 @@
       "dayReturn": "-1.04%",
       "factor": "7.2672",
       "strength": 0.9999990253389286,
-      "signal": "buy",
-      "action": "建议买入",
+      "factorSignal": "buy",
+      "ma20": "2.0146",
+      "maDiff": "-0.4%",
+      "maSignal": "sell",
+      "signalChange": "breakdown",
       "date": "2026-01-14"
     },
     {
@@ -909,8 +1134,11 @@
       "dayReturn": "-0.62%",
       "factor": "6.9165",
       "strength": 0.9999980348157617,
-      "signal": "buy",
-      "action": "建议买入",
+      "factorSignal": "buy",
+      "ma20": "1.1126",
+      "maDiff": "+0.8%",
+      "maSignal": "buy",
+      "signalChange": "none",
       "date": "2026-01-14"
     },
     {
@@ -921,8 +1149,11 @@
       "dayReturn": "+4.51%",
       "factor": "0.0000",
       "strength": 0.0,
-      "signal": "sell",
-      "action": "回避",
+      "factorSignal": "sell",
+      "ma20": "1.7327",
+      "maDiff": "+17.6%",
+      "maSignal": "buy",
+      "signalChange": "none",
       "date": "2026-01-14"
     },
     {
@@ -933,8 +1164,11 @@
       "dayReturn": "+2.56%",
       "factor": "0.0000",
       "strength": 0.0,
-      "signal": "sell",
-      "action": "回避",
+      "factorSignal": "sell",
+      "ma20": "1.0431",
+      "maDiff": "+26.7%",
+      "maSignal": "buy",
+      "signalChange": "none",
       "date": "2026-01-14"
     },
     {
@@ -945,8 +1179,11 @@
       "dayReturn": "-0.30%",
       "factor": "2.6610",
       "strength": 0.9902823894929312,
-      "signal": "buy",
-      "action": "建议买入",
+      "factorSignal": "buy",
+      "ma20": "1.3254",
+      "maDiff": "+0.7%",
+      "maSignal": "buy",
+      "signalChange": "none",
       "date": "2026-01-14"
     },
     {
@@ -957,8 +1194,11 @@
       "dayReturn": "-1.43%",
       "factor": "9.1914",
       "strength": 0.9999999792262899,
-      "signal": "buy",
-      "action": "建议买入",
+      "factorSignal": "buy",
+      "ma20": "1.5034",
+      "maDiff": "+0.8%",
+      "maSignal": "buy",
+      "signalChange": "none",
       "date": "2026-01-14"
     },
     {
@@ -969,8 +1209,11 @@
       "dayReturn": "-1.28%",
       "factor": "6.8326",
       "strength": 0.999997675562028,
-      "signal": "buy",
-      "action": "建议买入",
+      "factorSignal": "buy",
+      "ma20": "0.6223",
+      "maDiff": "-0.7%",
+      "maSignal": "sell",
+      "signalChange": "breakdown",
       "date": "2026-01-14"
     },
     {
@@ -981,8 +1224,11 @@
       "dayReturn": "-0.99%",
       "factor": "7.7772",
       "strength": 0.9999996485385136,
-      "signal": "buy",
-      "action": "建议买入",
+      "factorSignal": "buy",
+      "ma20": "1.1743",
+      "maDiff": "+2.3%",
+      "maSignal": "buy",
+      "signalChange": "none",
       "date": "2026-01-14"
     },
     {
@@ -993,8 +1239,11 @@
       "dayReturn": "-0.56%",
       "factor": "1.3685",
       "strength": 0.8783454782347037,
-      "signal": "buy",
-      "action": "建议买入",
+      "factorSignal": "buy",
+      "ma20": "1.1942",
+      "maDiff": "+3.3%",
+      "maSignal": "buy",
+      "signalChange": "none",
       "date": "2026-01-14"
     },
     {
@@ -1005,8 +1254,11 @@
       "dayReturn": "+0.34%",
       "factor": "1.4556",
       "strength": 0.8968005097212923,
-      "signal": "buy",
-      "action": "建议买入",
+      "factorSignal": "buy",
+      "ma20": "1.1229",
+      "maDiff": "+3.9%",
+      "maSignal": "buy",
+      "signalChange": "none",
       "date": "2026-01-14"
     },
     {
@@ -1017,32 +1269,101 @@
       "dayReturn": "+0.81%",
       "factor": "3.4146",
       "strength": 0.9978387427334556,
-      "signal": "buy",
-      "action": "建议买入",
+      "factorSignal": "buy",
+      "ma20": "0.9534",
+      "maDiff": "+3.9%",
+      "maSignal": "buy",
+      "signalChange": "none",
+      "date": "2026-01-14"
+    },
+    {
+      "code": "512400",
+      "name": "有色金属ETF",
+      "category": "有色",
+      "price": "2.1480",
+      "dayReturn": "+0.33%",
+      "factor": "3.2788",
+      "strength": 0.9971654999108406,
+      "factorSignal": "buy",
+      "ma20": "1.9383",
+      "maDiff": "+10.8%",
+      "maSignal": "buy",
+      "signalChange": "none",
       "date": "2026-01-14"
     },
     {
       "code": "159617",
       "name": "钢铁ETF",
-      "category": "地产",
+      "category": "有色",
       "price": "1.4120",
       "dayReturn": "+0.43%",
       "factor": "0.3162",
       "strength": 0.3060512611729439,
-      "signal": "hold",
-      "action": "观望",
+      "factorSignal": "hold",
+      "ma20": "1.3717",
+      "maDiff": "+2.9%",
+      "maSignal": "buy",
+      "signalChange": "none",
       "date": "2026-01-14"
     },
     {
       "code": "516780",
       "name": "稀土ETF",
-      "category": "地产",
+      "category": "有色",
       "price": "1.9690",
       "dayReturn": "-1.01%",
       "factor": "4.5537",
       "strength": 0.9997783344205398,
-      "signal": "buy",
-      "action": "建议买入",
+      "factorSignal": "buy",
+      "ma20": "1.7964",
+      "maDiff": "+9.6%",
+      "maSignal": "buy",
+      "signalChange": "none",
+      "date": "2026-01-14"
+    },
+    {
+      "code": "159880",
+      "name": "黄金ETF",
+      "category": "有色",
+      "price": "2.1960",
+      "dayReturn": "+0.97%",
+      "factor": "0.6789",
+      "strength": 0.5907944662565474,
+      "factorSignal": "hold",
+      "ma20": "1.9630",
+      "maDiff": "+11.9%",
+      "maSignal": "buy",
+      "signalChange": "none",
+      "date": "2026-01-14"
+    },
+    {
+      "code": "159812",
+      "name": "铜ETF",
+      "category": "有色",
+      "price": "9.8800",
+      "dayReturn": "+1.23%",
+      "factor": "1.1785",
+      "strength": 0.8269674287335965,
+      "factorSignal": "buy",
+      "ma20": "9.4915",
+      "maDiff": "+4.1%",
+      "maSignal": "buy",
+      "signalChange": "none",
+      "date": "2026-01-14"
+    },
+    {
+      "code": "159671",
+      "name": "煤炭ETF",
+      "category": "有色",
+      "price": "1.4490",
+      "dayReturn": "-1.16%",
+      "factor": "3.2093",
+      "strength": 0.9967432170192874,
+      "factorSignal": "buy",
+      "ma20": "1.3245",
+      "maDiff": "+9.4%",
+      "maSignal": "buy",
+      "signalChange": "none",
       "date": "2026-01-14"
     },
     {
@@ -1053,8 +1374,11 @@
       "dayReturn": "+0.04%",
       "factor": "0.5926",
       "strength": 0.5317309490419977,
-      "signal": "hold",
-      "action": "观望",
+      "factorSignal": "hold",
+      "ma20": "133.9751",
+      "maDiff": "+0.1%",
+      "maSignal": "buy",
+      "signalChange": "none",
       "date": "2026-01-14"
     },
     {
@@ -1065,8 +1389,11 @@
       "dayReturn": "+0.06%",
       "factor": "1.3718",
       "strength": 0.8791059234329744,
-      "signal": "buy",
-      "action": "建议买入",
+      "factorSignal": "buy",
+      "ma20": "140.0446",
+      "maDiff": "+0.0%",
+      "maSignal": "buy",
+      "signalChange": "breakthrough",
       "date": "2026-01-14"
     },
     {
@@ -1077,8 +1404,11 @@
       "dayReturn": "+0.05%",
       "factor": "1.2081",
       "strength": 0.8361206136197141,
-      "signal": "buy",
-      "action": "建议买入",
+      "factorSignal": "buy",
+      "ma20": "10.1980",
+      "maDiff": "+0.2%",
+      "maSignal": "buy",
+      "signalChange": "none",
       "date": "2026-01-14"
     },
     {
@@ -1089,8 +1419,11 @@
       "dayReturn": "+0.14%",
       "factor": "2.2520",
       "strength": 0.9781116091111045,
-      "signal": "buy",
-      "action": "建议买入",
+      "factorSignal": "buy",
+      "ma20": "116.8205",
+      "maDiff": "+0.2%",
+      "maSignal": "buy",
+      "signalChange": "none",
       "date": "2026-01-14"
     },
     {
@@ -1101,8 +1434,11 @@
       "dayReturn": "+0.06%",
       "factor": "1.2172",
       "strength": 0.8388197962350825,
-      "signal": "buy",
-      "action": "建议买入",
+      "factorSignal": "buy",
+      "ma20": "106.1836",
+      "maDiff": "+0.1%",
+      "maSignal": "buy",
+      "signalChange": "none",
       "date": "2026-01-14"
     },
     {
@@ -1113,8 +1449,11 @@
       "dayReturn": "+1.55%",
       "factor": "2.3908",
       "strength": 0.9833735699776889,
-      "signal": "buy",
-      "action": "建议买入",
+      "factorSignal": "buy",
+      "ma20": "1.5010",
+      "maDiff": "+4.7%",
+      "maSignal": "buy",
+      "signalChange": "none",
       "date": "2026-01-14"
     },
     {
@@ -1125,8 +1464,11 @@
       "dayReturn": "+0.80%",
       "factor": "2.6548",
       "strength": 0.9901609842969268,
-      "signal": "buy",
-      "action": "建议买入",
+      "factorSignal": "buy",
+      "ma20": "1.5808",
+      "maDiff": "+3.0%",
+      "maSignal": "buy",
+      "signalChange": "none",
       "date": "2026-01-14"
     },
     {
@@ -1137,8 +1479,11 @@
       "dayReturn": "+2.11%",
       "factor": "1.4060",
       "strength": 0.8866451402416405,
-      "signal": "buy",
-      "action": "建议买入",
+      "factorSignal": "buy",
+      "ma20": "0.6217",
+      "maDiff": "+9.2%",
+      "maSignal": "buy",
+      "signalChange": "none",
       "date": "2026-01-14"
     },
     {
@@ -1149,8 +1494,11 @@
       "dayReturn": "+0.90%",
       "factor": "3.3993",
       "strength": 0.9977719461599037,
-      "signal": "buy",
-      "action": "建议买入",
+      "factorSignal": "buy",
+      "ma20": "0.5280",
+      "maDiff": "+5.9%",
+      "maSignal": "buy",
+      "signalChange": "none",
       "date": "2026-01-14"
     },
     {
@@ -1161,8 +1509,11 @@
       "dayReturn": "+1.17%",
       "factor": "3.0968",
       "strength": 0.995923116663486,
-      "signal": "buy",
-      "action": "建议买入",
+      "factorSignal": "buy",
+      "ma20": "0.7455",
+      "maDiff": "+4.8%",
+      "maSignal": "buy",
+      "signalChange": "none",
       "date": "2026-01-14"
     },
     {
@@ -1173,8 +1524,11 @@
       "dayReturn": "+0.07%",
       "factor": "0.2353",
       "strength": 0.23106071813498352,
-      "signal": "sell",
-      "action": "回避",
+      "factorSignal": "sell",
+      "ma20": "1.4547",
+      "maDiff": "-0.7%",
+      "maSignal": "sell",
+      "signalChange": "none",
       "date": "2026-01-14"
     },
     {
@@ -1185,8 +1539,11 @@
       "dayReturn": "-0.31%",
       "factor": "0.4362",
       "strength": 0.4104499056074778,
-      "signal": "hold",
-      "action": "观望",
+      "factorSignal": "hold",
+      "ma20": "1.9133",
+      "maDiff": "-0.2%",
+      "maSignal": "sell",
+      "signalChange": "breakdown",
       "date": "2026-01-14"
     },
     {
@@ -1197,8 +1554,11 @@
       "dayReturn": "-0.33%",
       "factor": "3.2226",
       "strength": 0.9968285105979201,
-      "signal": "buy",
-      "action": "建议买入",
+      "factorSignal": "buy",
+      "ma20": "2.4508",
+      "maDiff": "+0.1%",
+      "maSignal": "buy",
+      "signalChange": "none",
       "date": "2026-01-14"
     },
     {
@@ -1209,8 +1569,11 @@
       "dayReturn": "-0.56%",
       "factor": "1.3910",
       "strength": 0.8833924389337199,
-      "signal": "buy",
-      "action": "建议买入",
+      "factorSignal": "buy",
+      "ma20": "1.4195",
+      "maDiff": "-0.5%",
+      "maSignal": "sell",
+      "signalChange": "breakdown",
       "date": "2026-01-14"
     },
     {
@@ -1221,8 +1584,11 @@
       "dayReturn": "-0.37%",
       "factor": "5.5967",
       "strength": 0.999972471242287,
-      "signal": "buy",
-      "action": "建议买入",
+      "factorSignal": "buy",
+      "ma20": "2.1071",
+      "maDiff": "+2.0%",
+      "maSignal": "buy",
+      "signalChange": "none",
       "date": "2026-01-14"
     }
   ]
