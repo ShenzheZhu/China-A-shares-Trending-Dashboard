@@ -48,14 +48,22 @@ export default function Home() {
       e.code.includes(search)
     )
     .sort((a, b) => {
-      // 先按MA信号排序（buy在前），再按偏离度排序
-      if (a.maSignal !== b.maSignal) {
-        return a.maSignal === 'buy' ? -1 : 1
+      // 按趋势策略三级排序：买入 > 观望 > 卖出
+      const getSignalRank = (e) => {
+        const diff = parseFloat(e.maDiff)
+        if (e.maSignal === 'buy' && diff <= 10) return 3  // 买入
+        if (e.maSignal === 'buy' && diff > 10) return 2   // 观望
+        return 1  // 卖出
       }
-      // 同信号内按偏离度排序（站上MA20的按偏离大排，跌破的按偏离小排）
+      const aRank = getSignalRank(a)
+      const bRank = getSignalRank(b)
+      if (aRank !== bRank) return bRank - aRank
+      
+      // 同级内排序：买入按偏离小优先，观望/卖出按偏离大优先
       const aDiff = parseFloat(a.maDiff)
       const bDiff = parseFloat(b.maDiff)
-      return bDiff - aDiff
+      if (aRank === 3) return aDiff - bDiff  // 买入：偏离小的更优先
+      return bDiff - aDiff  // 观望/卖出：偏离大的先显示
     })
 
   // 统计 - 量价因子
