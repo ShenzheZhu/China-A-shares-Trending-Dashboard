@@ -346,9 +346,15 @@ export default function Home() {
             </div>
 
             <div className="dual-strategy">
-              <div className={`strategy-item ${etf.maSignal}`}>
+              <div className={`strategy-item ${
+                etf.maSignal === 'sell' ? 'sell' : 
+                parseFloat(etf.maDiff) > 10 ? 'hold' : 'buy'
+              }`}>
                 <span className="strategy-label">趋势策略</span>
-                <span className="strategy-value">{etf.maSignal === 'buy' ? '买入' : '卖出'}</span>
+                <span className="strategy-value">{
+                  etf.maSignal === 'sell' ? '卖出' :
+                  parseFloat(etf.maDiff) > 10 ? '观望' : '买入'
+                }</span>
               </div>
               <div className={`strategy-item ${etf.factorSignal}`}>
                 <span className="strategy-label">量价因子</span>
