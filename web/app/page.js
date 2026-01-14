@@ -43,6 +43,7 @@ export default function Home() {
       e.name.toLowerCase().includes(search.toLowerCase()) || 
       e.code.includes(search)
     )
+    .sort((a, b) => b.strength - a.strength)
 
   // 统计
   const buyCount = signals?.etfs?.filter(e => e.signal === 'buy').length || 0
