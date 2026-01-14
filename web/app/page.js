@@ -348,7 +348,7 @@ export default function Home() {
             <div className="dual-strategy">
               <div className={`strategy-item ${etf.maSignal}`}>
                 <span className="strategy-label">趋势策略</span>
-                <span className="strategy-value">{etf.maSignal === 'buy' ? '持有' : '空仓'}</span>
+                <span className="strategy-value">{etf.maSignal === 'buy' ? '买入' : '卖出'}</span>
               </div>
               <div className={`strategy-item ${etf.factorSignal}`}>
                 <span className="strategy-label">量价因子</span>
