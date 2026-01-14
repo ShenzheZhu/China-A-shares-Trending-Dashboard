@@ -47,7 +47,16 @@ export default function Home() {
       e.name.toLowerCase().includes(search.toLowerCase()) || 
       e.code.includes(search)
     )
-    .sort((a, b) => b.strength - a.strength)
+    .sort((a, b) => {
+      // 先按MA信号排序（buy在前），再按偏离度排序
+      if (a.maSignal !== b.maSignal) {
+        return a.maSignal === 'buy' ? -1 : 1
+      }
+      // 同信号内按偏离度排序（站上MA20的按偏离大排，跌破的按偏离小排）
+      const aDiff = parseFloat(a.maDiff)
+      const bDiff = parseFloat(b.maDiff)
+      return bDiff - aDiff
+    })
 
   // 统计 - 量价因子
   const buyCount = signals?.etfs?.filter(e => e.factorSignal === 'buy').length || 0
@@ -205,21 +214,55 @@ export default function Home() {
         <h3>💡 今日操作建议 (MA20趋势策略)</h3>
         <div className="recommendation-grid">
           <div className="rec-card buy">
-            <h4>站上MA20 - 持有</h4>
+            <h4>刚站上MA20 - 可买入</h4>
             <ul>
-              {signals?.etfs?.filter(e => e.maSignal === 'buy').slice(0, 10).map(e => (
+              {signals?.etfs
+                ?.filter(e => e.maSignal === 'buy')
+                .map(e => ({...e, diffNum: parseFloat(e.maDiff)}))
+                .filter(e => e.diffNum > 0 && e.diffNum <= 10)
+                .sort((a, b) => a.diffNum - b.diffNum)
+                .slice(0, 8)
+                .map(e => (
                 <li key={e.code}>
                   <span className="rec-name">{e.name}</span>
                   <span className="rec-code">{e.code}</span>
                   <span className="rec-strength">{e.maDiff}</span>
                 </li>
               ))}
+              {signals?.etfs?.filter(e => e.maSignal === 'buy' && parseFloat(e.maDiff) <= 10).length === 0 && 
+                <li className="empty">无</li>
+              }
+            </ul>
+          </div>
+          <div className="rec-card hold">
+            <h4>强势上涨 - 持有</h4>
+            <ul>
+              {signals?.etfs
+                ?.filter(e => e.maSignal === 'buy')
+                .map(e => ({...e, diffNum: parseFloat(e.maDiff)}))
+                .filter(e => e.diffNum > 10)
+                .sort((a, b) => b.diffNum - a.diffNum)
+                .slice(0, 8)
+                .map(e => (
+                <li key={e.code}>
+                  <span className="rec-name">{e.name}</span>
+                  <span className="rec-code">{e.code}</span>
+                  <span className="rec-strength">{e.maDiff}</span>
+                </li>
+              ))}
+              {signals?.etfs?.filter(e => e.maSignal === 'buy' && parseFloat(e.maDiff) > 10).length === 0 && 
+                <li className="empty">无</li>
+              }
             </ul>
           </div>
           <div className="rec-card avoid">
             <h4>跌破MA20 - 空仓</h4>
             <ul>
-              {signals?.etfs?.filter(e => e.maSignal === 'sell').slice(0, 10).map(e => (
+              {signals?.etfs
+                ?.filter(e => e.maSignal === 'sell')
+                .sort((a, b) => parseFloat(a.maDiff) - parseFloat(b.maDiff))
+                .slice(0, 8)
+                .map(e => (
                 <li key={e.code}>
                   <span className="rec-name">{e.name}</span>
                   <span className="rec-code">{e.code}</span>
