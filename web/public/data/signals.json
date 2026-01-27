@@ -1,4 +1,95 @@
 {
-  "updateTime": "2026-01-26T15:25:30.568787",
-  "etfs": []
+  "updateTime": "2026-01-27T15:27:34.895565",
+  "etfs": [
+    {
+      "code": "510300",
+      "name": "沪深300ETF",
+      "category": "宽基",
+      "price": "4.7100",
+      "dayReturn": "-0.04%",
+      "factor": "3.5777",
+      "strength": 0.9984398516193195,
+      "factorSignal": "buy",
+      "ma20": "4.7278",
+      "maDiff": "-0.4%",
+      "maSignal": "sell",
+      "signalChange": "none",
+      "date": "2026-01-27"
+    },
+    {
+      "code": "510500",
+      "name": "中证500ETF",
+      "category": "宽基",
+      "price": "8.6190",
+      "dayReturn": "+0.64%",
+      "factor": "1.0558",
+      "strength": 0.7840536278988116,
+      "factorSignal": "buy",
+      "ma20": "8.1580",
+      "maDiff": "+5.7%",
+      "maSignal": "buy",
+      "signalChange": "none",
+      "date": "2026-01-27"
+    },
+    {
+      "code": "159915",
+      "name": "创业板ETF",
+      "category": "宽基",
+      "price": "3.3270",
+      "dayReturn": "+0.67%",
+      "factor": "0.3918",
+      "strength": 0.3729476586467753,
+      "factorSignal": "hold",
+      "ma20": "3.2985",
+      "maDiff": "+0.9%",
+      "maSignal": "buy",
+      "signalChange": "none",
+      "date": "2026-01-27"
+    },
+    {
+      "code": "588000",
+      "name": "科创50ETF",
+      "category": "宽基",
+      "price": "1.6400",
+      "dayReturn": "+1.55%",
+      "factor": "0.1121",
+      "strength": 0.11162690239537991,
+      "factorSignal": "sell",
+      "ma20": "1.5509",
+      "maDiff": "+5.7%",
+      "maSignal": "buy",
+      "signalChange": "none",
+      "date": "2026-01-27"
+    },
+    {
+      "code": "510050",
+      "name": "上证50ETF",
+      "category": "宽基",
+      "price": "3.1310",
+      "dayReturn": "+0.06%",
+      "factor": "2.5921",
+      "strength": 0.988853952492189,
+      "factorSignal": "buy",
+      "ma20": "3.1631",
+      "maDiff": "-1.0%",
+      "maSignal": "sell",
+      "signalChange": "none",
+      "date": "2026-01-27"
+    },
+    {
+      "code": "159919",
+      "name": "沪深300ETF易方达",
+      "category": "宽基",
+      "price": "4.9100",
+      "dayReturn": "-0.06%",
+      "factor": "1.7582",
+      "strength": 0.9423063761493748,
+      "factorSignal": "buy",
+      "ma20": "4.9274",
+      "maDiff": "-0.4%",
+      "maSignal": "sell",
+      "signalChange": "none",
+      "date": "2026-01-27"
+    }
+  ]
 }
