@@ -1,4 +1,35 @@
 {
-  "updateTime": "2026-03-23T15:56:52.554768",
-  "etfs": []
+  "updateTime": "2026-03-24T16:02:26.014728",
+  "etfs": [
+    {
+      "code": "510300",
+      "name": "沪深300ETF",
+      "category": "宽基",
+      "price": "4.4790",
+      "dayReturn": "+1.11%",
+      "factor": "2.0980",
+      "strength": 0.9703363401500058,
+      "factorSignal": "buy",
+      "ma20": "4.6512",
+      "maDiff": "-3.7%",
+      "maSignal": "sell",
+      "signalChange": "none",
+      "date": "2026-03-24"
+    },
+    {
+      "code": "510500",
+      "name": "中证500ETF",
+      "category": "宽基",
+      "price": "7.6520",
+      "dayReturn": "+1.86%",
+      "factor": "1.7910",
+      "strength": 0.9458609680312108,
+      "factorSignal": "buy",
+      "ma20": "8.2821",
+      "maDiff": "-7.6%",
+      "maSignal": "sell",
+      "signalChange": "none",
+      "date": "2026-03-24"
+    }
+  ]
 }
