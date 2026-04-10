@@ -1,20 +1,4 @@
 {
-  "updateTime": "2026-04-09T16:15:27.638203",
-  "etfs": [
-    {
-      "code": "510300",
-      "name": "沪深300ETF",
-      "category": "宽基",
-      "price": "4.5720",
-      "dayReturn": "-0.65%",
-      "factor": "1.6105",
-      "strength": 0.9232373817596163,
-      "factorSignal": "buy",
-      "ma20": "4.5521",
-      "maDiff": "+0.4%",
-      "maSignal": "buy",
-      "signalChange": "none",
-      "date": "2026-04-09"
-    }
-  ]
+  "updateTime": "2026-04-10T15:46:28.710034",
+  "etfs": []
 }
