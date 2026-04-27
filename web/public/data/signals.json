@@ -1,4 +1,80 @@
 {
-  "updateTime": "2026-04-24T16:01:32.215532",
-  "etfs": []
+  "updateTime": "2026-04-27T16:23:10.331559",
+  "etfs": [
+    {
+      "code": "510300",
+      "name": "沪深300ETF",
+      "category": "宽基",
+      "price": "4.7820",
+      "dayReturn": "+0.00%",
+      "factor": "1.5665",
+      "strength": 0.9164724685448965,
+      "factorSignal": "buy",
+      "ma20": "4.6481",
+      "maDiff": "+2.9%",
+      "maSignal": "buy",
+      "signalChange": "none",
+      "date": "2026-04-27"
+    },
+    {
+      "code": "510500",
+      "name": "中证500ETF",
+      "category": "宽基",
+      "price": "8.3680",
+      "dayReturn": "+0.54%",
+      "factor": "0.6956",
+      "strength": 0.6015362499118447,
+      "factorSignal": "hold",
+      "ma20": "8.0644",
+      "maDiff": "+3.8%",
+      "maSignal": "buy",
+      "signalChange": "none",
+      "date": "2026-04-27"
+    },
+    {
+      "code": "159915",
+      "name": "创业板ETF",
+      "category": "宽基",
+      "price": "3.6520",
+      "dayReturn": "-0.60%",
+      "factor": "1.8215",
+      "strength": 0.9489924330823962,
+      "factorSignal": "buy",
+      "ma20": "3.4612",
+      "maDiff": "+5.5%",
+      "maSignal": "buy",
+      "signalChange": "none",
+      "date": "2026-04-27"
+    },
+    {
+      "code": "588000",
+      "name": "科创50ETF",
+      "category": "宽基",
+      "price": "1.5910",
+      "dayReturn": "+3.92%",
+      "factor": "0.7271",
+      "strength": 0.621260220707407,
+      "factorSignal": "hold",
+      "ma20": "1.4461",
+      "maDiff": "+10.0%",
+      "maSignal": "buy",
+      "signalChange": "none",
+      "date": "2026-04-27"
+    },
+    {
+      "code": "510330",
+      "name": "沪深300ETF华夏",
+      "category": "宽基",
+      "price": "4.9770",
+      "dayReturn": "+0.04%",
+      "factor": "3.6315",
+      "strength": 0.9985990524908194,
+      "factorSignal": "buy",
+      "ma20": "4.8398",
+      "maDiff": "+2.8%",
+      "maSignal": "buy",
+      "signalChange": "none",
+      "date": "2026-04-27"
+    }
+  ]
 }
