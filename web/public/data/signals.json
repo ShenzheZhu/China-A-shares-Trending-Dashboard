@@ -1,4 +1,65 @@
 {
-  "updateTime": "2026-08-04T16:48:41.524591",
-  "etfs": []
+  "updateTime": "2026-08-05T16:28:59.044938",
+  "etfs": [
+    {
+      "code": "510300",
+      "name": "沪深300ETF",
+      "category": "宽基",
+      "price": "4.7140",
+      "dayReturn": "+1.35%",
+      "factor": "1.0518",
+      "strength": 0.7824969074429542,
+      "factorSignal": "buy",
+      "ma20": "4.7228",
+      "maDiff": "-0.2%",
+      "maSignal": "sell",
+      "signalChange": "none",
+      "date": "2026-08-05"
+    },
+    {
+      "code": "510500",
+      "name": "中证500ETF",
+      "category": "宽基",
+      "price": "7.8150",
+      "dayReturn": "+2.82%",
+      "factor": "0.7825",
+      "strength": 0.6541496487299429,
+      "factorSignal": "hold",
+      "ma20": "7.7932",
+      "maDiff": "+0.3%",
+      "maSignal": "buy",
+      "signalChange": "breakthrough",
+      "date": "2026-08-05"
+    },
+    {
+      "code": "159901",
+      "name": "深100ETF",
+      "category": "宽基",
+      "price": "3.6990",
+      "dayReturn": "+1.07%",
+      "factor": "0.1990",
+      "strength": 0.19644239735449534,
+      "factorSignal": "sell",
+      "ma20": "3.7163",
+      "maDiff": "-0.5%",
+      "maSignal": "sell",
+      "signalChange": "none",
+      "date": "2026-08-05"
+    },
+    {
+      "code": "560010",
+      "name": "中证2000ETF",
+      "category": "宽基",
+      "price": "3.1130",
+      "dayReturn": "+2.98%",
+      "factor": "0.0065",
+      "strength": 0.006454139734909585,
+      "factorSignal": "sell",
+      "ma20": "3.0627",
+      "maDiff": "+1.6%",
+      "maSignal": "buy",
+      "signalChange": "breakthrough",
+      "date": "2026-08-05"
+    }
+  ]
 }
