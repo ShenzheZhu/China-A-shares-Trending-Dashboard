@@ -1,4 +1,35 @@
 {
-  "updateTime": "2026-08-11T15:55:31.418503",
-  "etfs": []
+  "updateTime": "2026-08-12T15:54:27.933527",
+  "etfs": [
+    {
+      "code": "515710",
+      "name": "食品饮料ETF",
+      "category": "消费",
+      "price": "0.5170",
+      "dayReturn": "+0.78%",
+      "factor": "0.9834",
+      "strength": 0.7545408463543197,
+      "factorSignal": "buy",
+      "ma20": "0.5064",
+      "maDiff": "+2.1%",
+      "maSignal": "buy",
+      "signalChange": "none",
+      "date": "2026-08-12"
+    },
+    {
+      "code": "516980",
+      "name": "旅游ETF",
+      "category": "消费",
+      "price": "1.0770",
+      "dayReturn": "+0.28%",
+      "factor": "2.2043",
+      "strength": 0.9759488871115863,
+      "factorSignal": "buy",
+      "ma20": "1.0821",
+      "maDiff": "-0.5%",
+      "maSignal": "sell",
+      "signalChange": "none",
+      "date": "2026-08-12"
+    }
+  ]
 }
