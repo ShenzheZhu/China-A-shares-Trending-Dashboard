@@ -1,65 +1,35 @@
 {
-  "updateTime": "2026-09-16T18:36:55.691441",
+  "updateTime": "2026-09-17T18:44:53.629695",
   "etfs": [
     {
       "code": "510300",
       "name": "沪深300ETF",
       "category": "宽基",
-      "price": "4.5500",
-      "dayReturn": "+0.60%",
-      "factor": "0.2879",
-      "strength": 0.28019377264839745,
-      "factorSignal": "sell",
-      "ma20": "4.6270",
-      "maDiff": "-1.7%",
+      "price": "4.5320",
+      "dayReturn": "-0.40%",
+      "factor": "1.5134",
+      "strength": 0.907546148309061,
+      "factorSignal": "buy",
+      "ma20": "4.6209",
+      "maDiff": "-1.9%",
       "maSignal": "sell",
       "signalChange": "none",
-      "date": "2026-09-16"
+      "date": "2026-09-17"
     },
     {
       "code": "510500",
       "name": "中证500ETF",
       "category": "宽基",
-      "price": "7.7100",
-      "dayReturn": "+1.61%",
-      "factor": "0.7441",
-      "strength": 0.6315919497674495,
+      "price": "7.6810",
+      "dayReturn": "-0.38%",
+      "factor": "0.5473",
+      "strength": 0.49846717166274584,
       "factorSignal": "hold",
-      "ma20": "7.7763",
-      "maDiff": "-0.9%",
+      "ma20": "7.7672",
+      "maDiff": "-1.1%",
       "maSignal": "sell",
       "signalChange": "none",
-      "date": "2026-09-16"
-    },
-    {
-      "code": "588000",
-      "name": "科创50ETF",
-      "category": "宽基",
-      "price": "1.7080",
-      "dayReturn": "+4.27%",
-      "factor": "0.5746",
-      "strength": 0.5187493789425833,
-      "factorSignal": "hold",
-      "ma20": "1.7024",
-      "maDiff": "+0.3%",
-      "maSignal": "buy",
-      "signalChange": "breakthrough",
-      "date": "2026-09-16"
-    },
-    {
-      "code": "510330",
-      "name": "沪深300ETF华夏",
-      "category": "宽基",
-      "price": "4.7430",
-      "dayReturn": "+0.66%",
-      "factor": "0.9786",
-      "strength": 0.7524632617541203,
-      "factorSignal": "buy",
-      "ma20": "4.8246",
-      "maDiff": "-1.7%",
-      "maSignal": "sell",
-      "signalChange": "none",
-      "date": "2026-09-16"
+      "date": "2026-09-17"
     }
   ]
 }
